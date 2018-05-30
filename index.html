@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-node" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/30/node/" class="article-date">
+  <time datetime="2018-05-30T04:37:25.296Z" itemprop="datePublished">2018-05-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="案例研究：JavaScript图片库"><a href="#案例研究：JavaScript图片库" class="headerlink" title="案例研究：JavaScript图片库"></a>案例研究：JavaScript图片库</h1><h2 id="第一级DOM"><a href="#第一级DOM" class="headerlink" title="第一级DOM"></a>第一级DOM</h2><ul>
+<li>设置属性的两种方法：比如像改变input元素的value属性<ul>
+<li>element.value = ‘the new value’</li>
+<li>element.setAttribute(‘’valur’,’the new value’)</li>
+</ul>
+</li>
+<li>setAttribute方法是第一级DOM，优势在于可以修改文档中的任何一个元素的任何一个属性，而且可移植性好，第一种方法只使用web文档</li>
+<li>DOM是一种适用于对种环境和多种程序设计语言的通用性API，所以推荐使用第一级DOM</li>
+</ul>
+<h2 id="事件处理函数"><a href="#事件处理函数" class="headerlink" title="事件处理函数"></a>事件处理函数</h2><ul>
+<li>工作机制：再给某个链接添加一个onclick事件处理函数后，一旦事件发生，相应的JavaScript代码就会得到执行。被调用的JavaScript代码可以返回一个值，这个值将被传递给那个时间处理函数。</li>
+<li>所以可以在图片库案例中JavaScript代码里增加一天return false语句，就可以防止用户被带到目标链接窗口，即阻止了浏览器的默认行为。</li>
+</ul>
+<h2 id="几个DOM属性"><a href="#几个DOM属性" class="headerlink" title="几个DOM属性"></a>几个DOM属性</h2><ul>
+<li><p>childNodes属性：获取任何一个元素的所有子元素。返回的数组包含所有类型的节点，不仅仅是元素节点，事实上文档中的每一样东西都是一个节点，甚至连空格和换行符都会被解释为节点</p>
+</li>
+<li><p>nodeType属性：每个节点都有的属性。nodeType的值是一个数字。用法：node.nodeType</p>
+<ul>
+<li>此属性共有12种可取值，仅有三种有具有实用价格</li>
+<li>元素节点的nodeType属性值是1</li>
+<li>属性节点的nodeType属性值是2</li>
+<li>文本节点的nodeType属性值是3</li>
+</ul>
+</li>
+<li><p>nodeValue属性：改变文本节点的值。需要注意的：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"p"</span>&gt;</span>内容<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>如果需要拿到p的内容，使用p.nodeValue是拿不到的，返回的是一个null值，包含在p元素里的文本是另一种节点，是p元素的第一个子节点，所以要这么拿： p.childNodes[0].nodeValue</li>
+</ul>
+<ul>
+<li><p>firstChild属性：childNodes数组的第一个元素，都可以写成firstChild。node.firstChild 等价于 node.childNodes[0]</p>
+</li>
+<li><p>lastChild属性：childNodes数组的最后一个元素，都可以写成lastChild。node.lastChild 等价于 node.childNodes[node.childNodes.length-1]</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/30/node/" data-id="cjhsunk0c000030gi336x1fsn" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/05/30/node/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
