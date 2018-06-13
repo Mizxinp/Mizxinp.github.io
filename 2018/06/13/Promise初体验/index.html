@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="写在前面： ​    想了解更多有关回调的，可以去看这篇文章Callback Hell ​    想了解更多有关Promise的使用，推荐去阮一峰老师的ES6教程阮一峰Promise  回调函数解决异步编程写之前先来简单了解一下回调函数解决异步操作所引起的回调地狱问题。 我们知道异步编程无法保证代码的顺序性，如 1234567891011121314151617181920var fs = re">
+<meta name="description" content="写在前面： ​    想了解更多有关回调的，可以去看这篇文章Callback Hell ​    想了解更多有关Promise的使用，推荐去阮一峰老师的ES6教程阮一峰Promise ​    因最近在学nodejs，所以文章结合node进行说明  回调函数解决异步编程先简单了解一下回调函数解决异步操作所引起的回调地狱问题。 我们知道异步编程无法保证代码的顺序性，如 12345678910111">
 <meta name="keywords" content="-ES6">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Promise初体验">
 <meta property="og:url" content="http://yoursite.com/2018/06/13/Promise初体验/index.html">
 <meta property="og:site_name" content="Mizxinp&#39;s Blog">
-<meta property="og:description" content="写在前面： ​    想了解更多有关回调的，可以去看这篇文章Callback Hell ​    想了解更多有关Promise的使用，推荐去阮一峰老师的ES6教程阮一峰Promise  回调函数解决异步编程写之前先来简单了解一下回调函数解决异步操作所引起的回调地狱问题。 我们知道异步编程无法保证代码的顺序性，如 1234567891011121314151617181920var fs = re">
+<meta property="og:description" content="写在前面： ​    想了解更多有关回调的，可以去看这篇文章Callback Hell ​    想了解更多有关Promise的使用，推荐去阮一峰老师的ES6教程阮一峰Promise ​    因最近在学nodejs，所以文章结合node进行说明  回调函数解决异步编程先简单了解一下回调函数解决异步操作所引起的回调地狱问题。 我们知道异步编程无法保证代码的顺序性，如 12345678910111">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-13T15:04:04.377Z">
+<meta property="og:updated_time" content="2018-06-13T15:18:46.519Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Promise初体验">
-<meta name="twitter:description" content="写在前面： ​    想了解更多有关回调的，可以去看这篇文章Callback Hell ​    想了解更多有关Promise的使用，推荐去阮一峰老师的ES6教程阮一峰Promise  回调函数解决异步编程写之前先来简单了解一下回调函数解决异步操作所引起的回调地狱问题。 我们知道异步编程无法保证代码的顺序性，如 1234567891011121314151617181920var fs = re">
+<meta name="twitter:description" content="写在前面： ​    想了解更多有关回调的，可以去看这篇文章Callback Hell ​    想了解更多有关Promise的使用，推荐去阮一峰老师的ES6教程阮一峰Promise ​    因最近在学nodejs，所以文章结合node进行说明  回调函数解决异步编程先简单了解一下回调函数解决异步操作所引起的回调地狱问题。 我们知道异步编程无法保证代码的顺序性，如 12345678910111">
 
 
 
@@ -358,8 +358,9 @@
 <p>写在前面：</p>
 <p>​    想了解更多有关回调的，可以去看这篇文章<a href="http://callbackhell.com/" target="_blank" rel="noopener">Callback Hell</a></p>
 <p>​    想了解更多有关Promise的使用，推荐去阮一峰老师的ES6教程<a href="http://es6.ruanyifeng.com/#docs/promise" target="_blank" rel="noopener">阮一峰Promise</a></p>
+<p>​    因最近在学nodejs，所以文章结合node进行说明</p>
 </blockquote>
-<h2 id="回调函数解决异步编程"><a href="#回调函数解决异步编程" class="headerlink" title="回调函数解决异步编程"></a>回调函数解决异步编程</h2><p>写之前先来简单了解一下回调函数解决异步操作所引起的回调地狱问题。</p>
+<h2 id="回调函数解决异步编程"><a href="#回调函数解决异步编程" class="headerlink" title="回调函数解决异步编程"></a>回调函数解决异步编程</h2><p>先简单了解一下回调函数解决异步操作所引起的回调地狱问题。</p>
 <p>我们知道异步编程无法保证代码的顺序性，如</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</span><br><span class="line"></span><br><span class="line">fs.readFile(filePath, <span class="string">'utf8'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (err) &#123;</span><br><span class="line">    <span class="keyword">throw</span> err</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(aaa)</span><br><span class="line">&#125;)</span><br><span class="line">fs.readFile(filePath, <span class="string">'utf8'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (err) &#123;</span><br><span class="line">      <span class="keyword">throw</span> err</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(bbb)    </span><br><span class="line">&#125;)</span><br><span class="line">fs.readFile(filePath, <span class="string">'utf8'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (err) &#123;</span><br><span class="line">        <span class="keyword">throw</span> err</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="built_in">console</span>.log(ccc)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p>在这里我们不能保证按顺序输出aaa，bbb，ccc。</p>
