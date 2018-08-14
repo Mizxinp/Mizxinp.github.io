@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[操作系统引论]]></title>
+    <url>%2F2018%2F08%2F14%2F%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%BC%95%E8%AE%BA%2F</url>
+    <content type="text"><![CDATA[操作系统的基本特性1.并发并行性是指两个或多个事件同一时刻发生。 并发性是指两个或多个事件在同一时间间隔内发生。 操作系统通过引入进程和和线程，使程序能够并发执行。 2.共享资源共享也称资源复用，是指系统中的资源可供内存中多个并发执行的进程共同使用。 有两种共享方式 互斥共享：临界资源，如打印机，磁带机等。规定一段时间内，只允许一个进程访问该资源。 同时访问：允许一段时间内由多个进程“同时”对它们进行访问。 3.虚拟把通过某种技术将一个物理实体变为若干个逻辑上的对应物的功能称为“虚拟”。 主要有两种虚拟技术 时分复用技术：广泛用于实现虚拟处理机、虚拟设备等。利用率高的原因：利用某设备为一用户服务的空闲时间，又转去为其他用户服务 ，使设备得到充分利用。 空分复用技术：利用存储器的空闲时间分区域存放和运行其他的多道程序，以此来提高内存利用率。 4.异步每个进程的速度，时间等等是不可预知的。即进程是以人们不可预知的速度推进的，此即进程的异步性。 操作系统的主要功能1.处理机管理功能进程控制、进程同步、进程通信、调度。 2.存储器管理功能内存分配、内存保护、地址映射、内存扩充 3.设备管理功能缓冲管理、设备分配、设备处理 4.文件管理功能文件存储空间的管理、目录管理、文件的读/写管理和保护 微内核OS结构什么是微内核 足够小的内核 基于客户/服务器模式 应用“机制与策略分离”原理 采用面向对象技术 基本功能 进程（线程）管理 低级存储器管理 中断和陷入处理 优缺点优点： 提高系统的可扩展性 增强了系统的可靠性 可移植性强 提供了对分布式系统的支持 融入了面向对象技术 缺点 操作系统的运行效率降低（需要多次上下文的切换）]]></content>
+      <categories>
+        <category>操作体统</category>
+      </categories>
+      <tags>
+        <tag>操作系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[跨域，了解一下]]></title>
+    <url>%2F2018%2F08%2F09%2F%E8%B7%A8%E5%9F%9F%EF%BC%8C%E4%BA%86%E8%A7%A3%E4%B8%80%E4%B8%8B%2F</url>
+    <content type="text"><![CDATA[为什么要跨域同源策略同源策略是浏览器的一种安全策略，是为了保证用户信息的安全，防止恶意的网站窃取数据。所谓同源是指域名，协议，端口完全相同。 同源或者不同源说的是两个地址之间的关系，不同源之间请求我们称之为跨域请求。 如果非同源，有三种行为会受到限制： Cookie、LocalStorage和IndexDB无法读取 DOM 无法获得。 AJAX 请求不能发送。 这里主要讲AJAX如何在不同源之间发送请求。 解决跨域JSONP原理：在客户端借助script标签请求服务端的一个动态网页服务端的这个动态网页返回一段带有函数调用的JavaScript全局函数调用的脚本，将原本需要返回给客户端的数据传递进去 封装一个jsonp：123456789101112131415161718192021222324252627function jsonp(url, data, callback) &#123; //保证回调不会重名 var callbackName = 'jsonp_' + Date.now() + Math.random().toString().substr(2.7); //处理以对象形式传过来的参数 if (typeof data === 'object') &#123; var funArr = []; for (var key in data) &#123; var value = data[key]; funArr.push(key + '=' + value); &#125; data = funArr.join('&amp;'); &#125; //主要 var script = document.createElement('script'); script.src = url + '?' + data + 'callback=' + callbackName; document.body.appendChild(script); window[callbackName] = function (data) &#123; callback(data); //结束后删除标签 delete window[callbackName]; document.body.removeChild(script); &#125;&#125; 存在的问题： JSONP需要服务端配合，服务端按照客户端的要求返回一段JavaScript调用客户端的函数 只能发送GET请求 如果在jQuery中使用JSONP，就是将dataType设置为jsonp]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[认识jQuery]]></title>
     <url>%2F2018%2F08%2F08%2F%E8%AE%A4%E8%AF%86jQuery%2F</url>
     <content type="text"><![CDATA[1.window.onload与$(document).ready()的对比 window.onload $(document).ready() 执行时机 必须等待网页中所有的内容加载完毕后（包括图片）才能执行 网页中所有DOM结构绘制完毕后就执行，可能DOM元素关联的东西并没有加载完 编写个数 不能同时编写多个，编写多个只会执行最后一个 能同时编写多个，每个都会执行 简化写法 无 $(document).ready(function(){});可简写为$(function(){}) 2.jQuery对象在jQuery对象中无法使用DOM对象的任何方法，同样DOM对象也不能使用jQuery里的方法 3.jQuery对象和DOM对象的相互转换3.1.jQuery对象转成DOM对象(1) jQuery对象是一个数组对象，可以通过[index]的方法得到相应的DOM对象 12var $btn = $('btn'); //jQuery对象var btn = $btn[0]; //DOM对象 (2) 另一种方法是jQuery本身提供的，通过get(index)方法得到相应的DOM对象 12var $btn = $('btn'); //jQuery对象var btn = $btn.get(0); //DOM对象 3.2DOM对象转成jQuery对象12var btn = document.getElementById('btn'); //DOM对象var $btn = $(btn); //jQuery对象 4.解决jQuery和其他库的冲突4.1jQuery库在其他库之后导入在其他库和jQuery库都被加载完毕后，可以在任何时候调用jQuery.noConflict()函数来将变量$的控制权移交给其他js库 1jQuery.noConflict(); //将变量$的控制权移交给其他js库 还可以自定义一个快捷方式 1234var $j = jQuery.noConflict(); //自定义一个快捷方式$j(function()&#123; //...&#125;) 此外还有以下两种解决方法 1234567一：jQuery.noConflict(); //将变量$的控制权移交给其他js库jQuery(function($)&#123; //使用jQuery设定页面加载时执行的函数 $('#btn').on('click',function()&#123; //... &#125;)&#125;) 1234567二：jQuery.noConflict(); //将变量$的控制权移交给其他js库(function($)&#123; //定义匿名函数并设置形参为$ $('#btn').on('click',function()&#123; //... &#125;)&#125;)(jQuery) //执行匿名函数且传递实参jQuery 4.2.jQuery库在其他库之前导入如果jQuery库在其他库之前就导入了，那么可以直接使用“jQuery”来做一些jQuery的工作。同时，可以使用$()方法作为其他库的快捷方式。无需调用jQuery.noConflict()函数。]]></content>
