@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Mizxinp&#39;s Blog">
 <meta property="og:description" content="1.基本选择器   选择器 描述 返回 示例     #id 根据给定的的id匹配一个元素 单个元素 $(“#btn”)   .class 根据给定的class匹配元素 集合元素 $(“.class”)   element 根据给定的元素匹配元素 集合元素 $(“div”)   * 匹配所有元素 集合元素 $(“*”)   selector1，selector2… 将每个选择器匹配到的元素合并后一">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-19T15:00:27.332Z">
+<meta property="og:updated_time" content="2018-08-19T15:12:26.518Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="二、jQuery选择器">
 <meta name="twitter:description" content="1.基本选择器   选择器 描述 返回 示例     #id 根据给定的的id匹配一个元素 单个元素 $(“#btn”)   .class 根据给定的class匹配元素 集合元素 $(“.class”)   element 根据给定的元素匹配元素 集合元素 $(“div”)   * 匹配所有元素 集合元素 $(“*”)   selector1，selector2… 将每个选择器匹配到的元素合并后一">
@@ -353,7 +353,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,258字
+                  1,279字
                 </span>
               
 
@@ -481,7 +481,7 @@
 <td>:first</td>
 <td>选取第一个元素</td>
 <td>单个元素</td>
-<td>$(“div:first”)选取所有<div>元素中第一个<div>元素</div></div></td>
+<td>$(“div:first”)选取所有div元素中第一个div元素</td>
 </tr>
 <tr>
 <td>:last</td>
@@ -493,7 +493,7 @@
 <td>:not(selector)</td>
 <td>去除所有与给定选择器匹配的元素</td>
 <td>集合元素</td>
-<td>$(“input:not(.myClass)”)选取class不是myClass的<input>元素</td>
+<td>$(“input:not(.myClass)”)选取class不是myClass的input元素</td>
 </tr>
 <tr>
 <td>:even</td>
@@ -517,7 +517,7 @@
 <td>:gt(index)</td>
 <td>选取索引大于index的元素（index从0开始）</td>
 <td>集合元素</td>
-<td>$(“input:gt(1)”)选取索引大于1的<input>元素（大于1，不包括1）</td>
+<td>$(“input:gt(1)”)选取索引大于1的input元素（大于1，不包括1）</td>
 </tr>
 <tr>
 <td>:lt(index)</td>
@@ -552,7 +552,7 @@
 <td>:contains(text)</td>
 <td>选取含有文本内容为“text”的元素</td>
 <td>集合元素</td>
-<td>$(“div:contains(‘我’)”)选取含有文本“我”的<div>元素</div></td>
+<td>$(“div:contains(‘我’)”)选取含有文本“我”的div元素</td>
 </tr>
 <tr>
 <td>:empty</td>
@@ -564,7 +564,7 @@
 <td>:has(selector)</td>
 <td>选组含有选择器所匹配的元素的元素</td>
 <td>集合元素</td>
-<td>$(“div:has(p)”)选取含有<p>元素的<div>元素</div></p></td>
+<td>$(“div:has(p)”)选取含有p元素的div元素</td>
 </tr>
 <tr>
 <td>:parent</td>
@@ -616,7 +616,7 @@
 <td>[attribute=value]</td>
 <td>选取属性的值为value的元素</td>
 <td>集合元素</td>
-<td>$(“div[title=test]”)选取属性title为“test”的<div>元素</div></td>
+<td>$(“div[title=test]”)选取属性title为“test”的div元素</td>
 </tr>
 <tr>
 <td>[attribute!=value]</td>
@@ -646,7 +646,7 @@
 <td>[selector1][selector2]</td>
 <td>用属性选择器合并成一个符复合属性选择器，满足多个条件。每选择一次，缩小一次范围</td>
 <td>集合元素</td>
-<td>$(“div[id][title$=’test’]”)选取拥有属性id，并且属性title以“test”结束的<div>元素</div></td>
+<td>$(“div[id][title$=’test’]”)选取拥有属性id，并且属性title以“test”结束的div元素</td>
 </tr>
 </tbody>
 </table>
@@ -670,7 +670,7 @@
 <td>:first-child</td>
 <td>选取每个父元素的第一个子元素</td>
 <td>集合元素</td>
-<td>$(“ul li:first-child”)选取每个<ul>中第1个<li>元素</li></ul></td>
+<td>$(“ul li:first-child”)选取每个ul中第1个li元素</td>
 </tr>
 <tr>
 <td>:last-child</td>
@@ -682,7 +682,7 @@
 <td>:only-child</td>
 <td>如果某个元素是它的父元素中唯一的子元素，那么将会被匹配。如果父元素中含有其他元素，则不会被匹配</td>
 <td>集合元素</td>
-<td>$(“ul li:only-child”)在<ul>中选取是唯一子元素的<li>元素</li></ul></td>
+<td>$(“ul li:only-child”)在ul中选取是唯一子元素的li元素</td>
 </tr>
 </tbody>
 </table>
@@ -733,7 +733,7 @@
 <tbody>
 <tr>
 <td>:input</td>
-<td>选取所有<input>,<textare>,<select>,</select><button>元素</button></textare></td>
+<td>选取所有input,textare,select,button元素</td>
 <td>集合元素</td>
 <td></td>
 </tr>
