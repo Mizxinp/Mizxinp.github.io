@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="操作系统," />
 
 
 
@@ -79,13 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Mizxinp&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/archives/2018/06/index.html">
+<meta name="description" content="进程的描述定义进程：由程序段，相关的数据段和PCB三部分构成  进程是程序的一次执行 进程是一个程序及其数据在处理机上顺序执行时所发生的活动 进程是具有独立功能的程序在一个数据集合上的运行的结果，它是系统进行资源分配和调度的一个独立单位  特征 动态性 并发性 独立性 异步性  进程的三种基本状态就绪状态：进程已处于准备好运行的状态，即已分配到除CPU以外的所有必要资源后，只要再获得CPU，便可立">
+<meta name="keywords" content="操作系统">
+<meta property="og:type" content="article">
+<meta property="og:title" content="二、进程的描述与控制">
+<meta property="og:url" content="http://yoursite.com/2018/08/18/二、进程的描述与控制/index.html">
 <meta property="og:site_name" content="Mizxinp&#39;s Blog">
+<meta property="og:description" content="进程的描述定义进程：由程序段，相关的数据段和PCB三部分构成  进程是程序的一次执行 进程是一个程序及其数据在处理机上顺序执行时所发生的活动 进程是具有独立功能的程序在一个数据集合上的运行的结果，它是系统进行资源分配和调度的一个独立单位  特征 动态性 并发性 独立性 异步性  进程的三种基本状态就绪状态：进程已处于准备好运行的状态，即已分配到除CPU以外的所有必要资源后，只要再获得CPU，便可立">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-18T13:04:32.580Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mizxinp&#39;s Blog">
+<meta name="twitter:title" content="二、进程的描述与控制">
+<meta name="twitter:description" content="进程的描述定义进程：由程序段，相关的数据段和PCB三部分构成  进程是程序的一次执行 进程是一个程序及其数据在处理机上顺序执行时所发生的活动 进程是具有独立功能的程序在一个数据集合上的运行的结果，它是系统进行资源分配和调度的一个独立单位  特征 动态性 并发性 独立性 异步性  进程的三种基本状态就绪状态：进程已处于准备好运行的状态，即已分配到除CPU以外的所有必要资源后，只要再获得CPU，便可立">
 
 
 
@@ -115,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2018/06/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/18/二、进程的描述与控制/"/>
 
 
 
 
 
-  <title>归档 | Mizxinp's Blog</title>
+  <title>二、进程的描述与控制 | Mizxinp's Blog</title>
   
 
 
@@ -140,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     
 
@@ -251,111 +256,262 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        嗯..! 目前共计 10 篇日志。 继续努力。
-      </span>
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
-
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/18/二、进程的描述与控制/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张兴平">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mizxinp's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/06/13/Promise初体验/" itemprop="url">
-              
-                <span itemprop="name">Promise初体验</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">二、进程的描述与控制</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-13T22:55:20+08:00"
-              content="2018-06-13" >
-          06-13
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-18T19:00:24+08:00">
+                2018-08-18
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/操作系统/" itemprop="url" rel="index">
+                    <span itemprop="name">操作系统</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,166字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/10/Mongoose简单操作/" itemprop="url">
-              
-                <span itemprop="name">Mongoose简单操作</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-10T21:57:24+08:00"
-              content="2018-06-10" >
-          06-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
+      
+        <h2 id="进程的描述"><a href="#进程的描述" class="headerlink" title="进程的描述"></a>进程的描述</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>进程：由程序段，相关的数据段和PCB三部分构成</p>
+<ul>
+<li>进程是程序的一次执行</li>
+<li>进程是一个程序及其数据在处理机上顺序执行时所发生的活动</li>
+<li>进程是具有独立功能的程序在一个数据集合上的运行的结果，它是系统进行资源分配和调度的一个独立单位</li>
+</ul>
+<h3 id="特征"><a href="#特征" class="headerlink" title="特征"></a>特征</h3><ul>
+<li>动态性</li>
+<li>并发性</li>
+<li>独立性</li>
+<li>异步性</li>
+</ul>
+<h3 id="进程的三种基本状态"><a href="#进程的三种基本状态" class="headerlink" title="进程的三种基本状态"></a>进程的三种基本状态</h3><p>就绪状态：进程已处于准备好运行的状态，即已分配到除CPU以外的所有必要资源后，只要再获得CPU，便可立即执行<br>执行状态：进程已获得CPU，其程序正在执行的状态<br>阻塞状态：正在执行的进程由于发生某事件（I/O请求，申请缓冲区失败等)暂时无法继续执行时的状态</p>
+<h4 id="三种状态的转换"><a href="#三种状态的转换" class="headerlink" title="三种状态的转换"></a>三种状态的转换</h4><h3 id="进程控制块PCB"><a href="#进程控制块PCB" class="headerlink" title="进程控制块PCB"></a>进程控制块PCB</h3><p>用于描述进程的当前情况以及管理进程运行的全部信息，使一个在多道程序环境下不能独立运行的程序成为一个能独立运行的基本单位</p>
+<p>具体作用；</p>
+<ul>
+<li>作为独立运行基本单位的标志</li>
+<li>能实现间断性运行方式</li>
+<li>提供进程管理所需要的信息</li>
+<li>提供进程调度所需要的信息</li>
+<li>实现与其它进程的同步与通信</li>
+</ul>
+<h2 id="进程控制"><a href="#进程控制" class="headerlink" title="进程控制"></a>进程控制</h2><h3 id="操作系统内核："><a href="#操作系统内核：" class="headerlink" title="操作系统内核："></a>操作系统内核：</h3><p>通常将一些与硬件紧密相关的模块（如中断处理程序等），各种常用设备的驱动程序以及运行频率较高的模块（如时钟管理，进程调度和许多模块所公用的一些基本操作），都安排在紧靠硬件的软件层面中，将它们常驻内存，即称为OS内核</p>
+<h4 id="OS内核两大功能："><a href="#OS内核两大功能：" class="headerlink" title="OS内核两大功能："></a>OS内核两大功能：</h4><h5 id="支撑功能"><a href="#支撑功能" class="headerlink" title="支撑功能"></a>支撑功能</h5><ul>
+<li>中断处理</li>
+<li>时钟处理</li>
+<li>原语操作：一个操作中要么全做，要么全部不做</li>
+</ul>
+<h5 id="资源管理功能"><a href="#资源管理功能" class="headerlink" title="资源管理功能"></a>资源管理功能</h5><ul>
+<li>进程管理</li>
+<li>存储器管理</li>
+<li>设备管理</li>
+</ul>
+<h2 id="进程同步"><a href="#进程同步" class="headerlink" title="进程同步"></a>进程同步</h2><p>进程同步机制的主要任务，是对多个相关进程在执行次序上进行协调，使并发执行的进程之间能按照一定的规则共享系统资源。<br>临界资源：如打印机，磁带机等<br>临界区：人们把在每个进程中访问临界资源的那段代码称为临界区</p>
+<h3 id="同步机制应遵循的规则"><a href="#同步机制应遵循的规则" class="headerlink" title="同步机制应遵循的规则"></a>同步机制应遵循的规则</h3><ul>
+<li>空闲让进</li>
+<li>忙则等待</li>
+<li>有限等待</li>
+<li>让权等待</li>
+</ul>
+<h2 id="进程通信"><a href="#进程通信" class="headerlink" title="进程通信"></a>进程通信</h2><h3 id="进程通信的类型"><a href="#进程通信的类型" class="headerlink" title="进程通信的类型"></a>进程通信的类型</h3><ul>
+<li>共享存储器系统</li>
+<li>管道通信系统</li>
+<li>消息传递系统</li>
+<li>客户机-服务器系统</li>
+</ul>
+<h3 id="消息传递通信的实现方式"><a href="#消息传递通信的实现方式" class="headerlink" title="消息传递通信的实现方式"></a>消息传递通信的实现方式</h3><ul>
+<li>直接消息传递系统</li>
+<li>信箱通信</li>
+</ul>
+<h2 id="线程（Threads）的基本概念"><a href="#线程（Threads）的基本概念" class="headerlink" title="线程（Threads）的基本概念"></a>线程（Threads）的基本概念</h2><h3 id="线程的引入"><a href="#线程的引入" class="headerlink" title="线程的引入"></a>线程的引入</h3><p>引入线程是为了减少程序在并发执行时所付出的时空开销，使OS具有更好的并发性</p>
+<p>程序的并发执行需要经过创建进程，撤销进程和进程切换。在此过程系统付出里较大的时空开销</p>
+<p>线程作为调度和分派的基本单位，能使多个程序更好的并发执行，同时又尽量减少系统的开销</p>
+<h3 id="线程与进程的比较"><a href="#线程与进程的比较" class="headerlink" title="线程与进程的比较"></a>线程与进程的比较</h3><h5 id="调度的基本单位"><a href="#调度的基本单位" class="headerlink" title="调度的基本单位"></a>调度的基本单位</h5><p>传统OS中，进程每次调度时进行的上下文切换，开销较大。引入线程之后，就把线程作为调度和分派的基本单位，是独立运行的基本单位，切换代价远低于进程。</p>
+<h5 id="并发性"><a href="#并发性" class="headerlink" title="并发性"></a>并发性</h5><p>一个进程中的多个线程可以并发执行，使得OS具有更好的并发性，从而能更加有效的提高系统资源的利用率和系统的吞吐率</p>
+<h5 id="拥有资源"><a href="#拥有资源" class="headerlink" title="拥有资源"></a>拥有资源</h5><p>进程可以拥有资源，并作为系统中拥有资源的一个基本单位。线程本身并不拥有系统资源，而是仅有一点能保证独立运行的资源。</p>
+<h5 id="独立性"><a href="#独立性" class="headerlink" title="独立性"></a>独立性</h5><p>在同一个进程中的不同线程之间的独立性要比不同进程之间的独立性低得多。</p>
+<h5 id="系统开销"><a href="#系统开销" class="headerlink" title="系统开销"></a>系统开销</h5><p>创建或撤销进程的开销明显大于线程创建或撤销是所付出的开销</p>
+<h5 id="支持多处理机系统"><a href="#支持多处理机系统" class="headerlink" title="支持多处理机系统"></a>支持多处理机系统</h5><p>传统的进程，即单线程进程，只能运行在一个处理机上，而多线程进程，可以将一个进程中的多个线程分配到多个处理机上</p>
+
+      
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/操作系统/" rel="tag"># 操作系统</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/14/一、操作系统引论/" rel="next" title="一、操作系统引论">
+                <i class="fa fa-chevron-left"></i> 一、操作系统引论
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/19/二、jQuery选择器/" rel="prev" title="二、jQuery选择器">
+                二、jQuery选择器 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -363,6 +519,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -383,8 +543,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -444,6 +613,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#进程的描述"><span class="nav-number">1.</span> <span class="nav-text">进程的描述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">1.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特征"><span class="nav-number">1.2.</span> <span class="nav-text">特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进程的三种基本状态"><span class="nav-number">1.3.</span> <span class="nav-text">进程的三种基本状态</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#三种状态的转换"><span class="nav-number">1.3.1.</span> <span class="nav-text">三种状态的转换</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进程控制块PCB"><span class="nav-number">1.4.</span> <span class="nav-text">进程控制块PCB</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程控制"><span class="nav-number">2.</span> <span class="nav-text">进程控制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#操作系统内核："><span class="nav-number">2.1.</span> <span class="nav-text">操作系统内核：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#OS内核两大功能："><span class="nav-number">2.1.1.</span> <span class="nav-text">OS内核两大功能：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#支撑功能"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">支撑功能</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#资源管理功能"><span class="nav-number">2.1.1.2.</span> <span class="nav-text">资源管理功能</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程同步"><span class="nav-number">3.</span> <span class="nav-text">进程同步</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#同步机制应遵循的规则"><span class="nav-number">3.1.</span> <span class="nav-text">同步机制应遵循的规则</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程通信"><span class="nav-number">4.</span> <span class="nav-text">进程通信</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#进程通信的类型"><span class="nav-number">4.1.</span> <span class="nav-text">进程通信的类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#消息传递通信的实现方式"><span class="nav-number">4.2.</span> <span class="nav-text">消息传递通信的实现方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程（Threads）的基本概念"><span class="nav-number">5.</span> <span class="nav-text">线程（Threads）的基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#线程的引入"><span class="nav-number">5.1.</span> <span class="nav-text">线程的引入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线程与进程的比较"><span class="nav-number">5.2.</span> <span class="nav-text">线程与进程的比较</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#调度的基本单位"><span class="nav-number">5.2.0.1.</span> <span class="nav-text">调度的基本单位</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#并发性"><span class="nav-number">5.2.0.2.</span> <span class="nav-text">并发性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#拥有资源"><span class="nav-number">5.2.0.3.</span> <span class="nav-text">拥有资源</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#独立性"><span class="nav-number">5.2.0.4.</span> <span class="nav-text">独立性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#系统开销"><span class="nav-number">5.2.0.5.</span> <span class="nav-text">系统开销</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#支持多处理机系统"><span class="nav-number">5.2.0.6.</span> <span class="nav-text">支持多处理机系统</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -585,6 +770,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

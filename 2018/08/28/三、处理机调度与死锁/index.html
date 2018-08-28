@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="操作系统," />
 
 
 
@@ -79,13 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Mizxinp&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/archives/2018/06/index.html">
+<meta name="description" content="处理机调度的层次和调度算法的目标1.处理机调度的层次 高级调度：调度对象是作业，主要用于多道批处理系统中 中级调度：即内存调度。目的是提高内存的利用率和系统的吞吐率 低级调度：调度对象是进程  作业与作业调度1.作业概念：作业不仅包含了通常的程序和数据，而且还应配有一份作业说明说，系统根据说明书来对程序的运行进行控制。 主要任务：根据作业控制块中的信息，检查系统中的资源能否满足作业对资源的需求，以">
+<meta name="keywords" content="操作系统">
+<meta property="og:type" content="article">
+<meta property="og:title" content="三、处理机调度与死锁">
+<meta property="og:url" content="http://yoursite.com/2018/08/28/三、处理机调度与死锁/index.html">
 <meta property="og:site_name" content="Mizxinp&#39;s Blog">
+<meta property="og:description" content="处理机调度的层次和调度算法的目标1.处理机调度的层次 高级调度：调度对象是作业，主要用于多道批处理系统中 中级调度：即内存调度。目的是提高内存的利用率和系统的吞吐率 低级调度：调度对象是进程  作业与作业调度1.作业概念：作业不仅包含了通常的程序和数据，而且还应配有一份作业说明说，系统根据说明书来对程序的运行进行控制。 主要任务：根据作业控制块中的信息，检查系统中的资源能否满足作业对资源的需求，以">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-28T13:41:14.265Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mizxinp&#39;s Blog">
+<meta name="twitter:title" content="三、处理机调度与死锁">
+<meta name="twitter:description" content="处理机调度的层次和调度算法的目标1.处理机调度的层次 高级调度：调度对象是作业，主要用于多道批处理系统中 中级调度：即内存调度。目的是提高内存的利用率和系统的吞吐率 低级调度：调度对象是进程  作业与作业调度1.作业概念：作业不仅包含了通常的程序和数据，而且还应配有一份作业说明说，系统根据说明书来对程序的运行进行控制。 主要任务：根据作业控制块中的信息，检查系统中的资源能否满足作业对资源的需求，以">
 
 
 
@@ -115,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2018/06/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/28/三、处理机调度与死锁/"/>
 
 
 
 
 
-  <title>归档 | Mizxinp's Blog</title>
+  <title>三、处理机调度与死锁 | Mizxinp's Blog</title>
   
 
 
@@ -140,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     
 
@@ -251,111 +256,290 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        嗯..! 目前共计 10 篇日志。 继续努力。
-      </span>
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
-
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/28/三、处理机调度与死锁/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张兴平">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mizxinp's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/06/13/Promise初体验/" itemprop="url">
-              
-                <span itemprop="name">Promise初体验</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">三、处理机调度与死锁</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-13T22:55:20+08:00"
-              content="2018-06-13" >
-          06-13
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-28T19:31:41+08:00">
+                2018-08-28
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/操作系统/" itemprop="url" rel="index">
+                    <span itemprop="name">操作系统</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,504字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/10/Mongoose简单操作/" itemprop="url">
-              
-                <span itemprop="name">Mongoose简单操作</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-10T21:57:24+08:00"
-              content="2018-06-10" >
-          06-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
+      
+        <h2 id="处理机调度的层次和调度算法的目标"><a href="#处理机调度的层次和调度算法的目标" class="headerlink" title="处理机调度的层次和调度算法的目标"></a>处理机调度的层次和调度算法的目标</h2><h3 id="1-处理机调度的层次"><a href="#1-处理机调度的层次" class="headerlink" title="1.处理机调度的层次"></a>1.处理机调度的层次</h3><ul>
+<li>高级调度：调度对象是作业，主要用于多道批处理系统中</li>
+<li>中级调度：即内存调度。目的是提高内存的利用率和系统的吞吐率</li>
+<li>低级调度：调度对象是进程</li>
+</ul>
+<h2 id="作业与作业调度"><a href="#作业与作业调度" class="headerlink" title="作业与作业调度"></a>作业与作业调度</h2><h3 id="1-作业"><a href="#1-作业" class="headerlink" title="1.作业"></a>1.作业</h3><p>概念：作业不仅包含了通常的程序和数据，而且还应配有一份作业说明说，系统根据说明书来对程序的运行进行控制。</p>
+<p>主要任务：根据作业控制块中的信息，检查系统中的资源能否满足作业对资源的需求，以及按照一定的调度算法，从外存的后备队列中选取某些作业调入内存，并为它创建进程，分配必要的资源。然后再将新创建的进程排在就绪队列上等待调度</p>
+<h3 id="2-作业调度"><a href="#2-作业调度" class="headerlink" title="2.作业调度"></a>2.作业调度</h3><p>先来先服务调度算法：优先考虑在系统中等待时间最长的作业，不管该作业所需执行时间的长短。</p>
+<p>短作业优先的调度算法：以作业的长短计算优先级，作业越短，其优先级越高</p>
+<h2 id="进程调度"><a href="#进程调度" class="headerlink" title="进程调度"></a>进程调度</h2><h3 id="1-任务"><a href="#1-任务" class="headerlink" title="1.任务"></a>1.任务</h3><ul>
+<li>保存处理机的现场信息</li>
+<li>按某种算法选取进程</li>
+<li>吧处理器分配给进程</li>
+</ul>
+<h3 id="2-调度机制"><a href="#2-调度机制" class="headerlink" title="2.调度机制"></a>2.调度机制</h3><ul>
+<li>排队器：事先将就绪进程按一定策略排队</li>
+<li>分派器；将处理机分配给选到的进程</li>
+<li>上下文切换器：进行上下文切换</li>
+</ul>
+<h3 id="3-进程调度方式"><a href="#3-进程调度方式" class="headerlink" title="3.进程调度方式"></a>3.进程调度方式</h3><h4 id="3-1非抢占方式"><a href="#3-1非抢占方式" class="headerlink" title="3.1非抢占方式"></a>3.1非抢占方式</h4><p>一旦把处理机分配给某个进程时，就一直让它进行下去，不会因为中断请求等将去抢占正在运行进程的处理机。</p>
+<h4 id="3-2-抢占方式"><a href="#3-2-抢占方式" class="headerlink" title="3.2.抢占方式"></a>3.2.抢占方式</h4><p>允许调度程序根据某些规则，去暂停某个正在执行的进程，将已分配给该进程的处理机重新分配给另一进程</p>
+<p>遵循一定的原则：</p>
+<ul>
+<li>优先权原则</li>
+<li>短进程优先原则</li>
+<li>时间片原则</li>
+</ul>
+<h2 id="死锁概述"><a href="#死锁概述" class="headerlink" title="死锁概述"></a>死锁概述</h2><h4 id="1-定义"><a href="#1-定义" class="headerlink" title="1.定义"></a>1.定义</h4><p>如果一组进程中的每一个进程都在等待仅由该组进程中的其它进程才能引发的事件，则该组进程是死锁的</p>
+<p>可抢占资源是不会引起死锁的，像CPU、主存等</p>
+<p>不可抢占资源会引起死锁，像磁带机，打印机等</p>
+<h4 id="2-产生的条件"><a href="#2-产生的条件" class="headerlink" title="2.产生的条件"></a>2.产生的条件</h4><p>同时具备以下四个条件</p>
+<ul>
+<li>互斥条件</li>
+<li>请求和保持条件</li>
+<li>不可抢占条件</li>
+<li>循环等待条件</li>
+</ul>
+<h4 id="3-处理死锁的方法"><a href="#3-处理死锁的方法" class="headerlink" title="3.处理死锁的方法"></a>3.处理死锁的方法</h4><ul>
+<li>预防死锁</li>
+<li>避免死锁</li>
+<li>检测死锁</li>
+<li>解除死锁</li>
+</ul>
+<h2 id="预防死锁"><a href="#预防死锁" class="headerlink" title="预防死锁"></a>预防死锁</h2><p>原理：因为互斥条件是非共享设备所必须的，不仅不能改变，还应加以保证，所以主要是破坏产生死锁的后三个条件</p>
+<h3 id="1-破坏“请求和保持”条件"><a href="#1-破坏“请求和保持”条件" class="headerlink" title="1.破坏“请求和保持”条件"></a>1.破坏“请求和保持”条件</h3><p>保证当一个进程在请求资源时，它不能持有不可抢占资源。通过两种协议实现这种保证</p>
+<ul>
+<li>规定所有进程在开始运行前，必须一次性的申请其在整个运行过程中所需的全部资源</li>
+<li>允许一个进程只获得运行初期所需的资源后，便开始运行，然后在逐步的边释放边请求资源</li>
+</ul>
+<h3 id="2-破坏“不可抢占”条件"><a href="#2-破坏“不可抢占”条件" class="headerlink" title="2.破坏“不可抢占”条件"></a>2.破坏“不可抢占”条件</h3><p>规定当一个已经保持了某些不可被抢占资源的进程，提出新的资源请求而不能得到满足时，它必须释放已经保持的所有资源，待以后需要时再重新申请</p>
+<h3 id="3-破坏“循环等待”条件"><a href="#3-破坏“循环等待”条件" class="headerlink" title="3.破坏“循环等待”条件"></a>3.破坏“循环等待”条件</h3><p>对系统所有资源类型进行线性排序，进程只能按编号顺序来请求资源。</p>
+<h2 id="避免死锁"><a href="#避免死锁" class="headerlink" title="避免死锁"></a>避免死锁</h2><p>在程序运行时避免发生死锁，确保系统始终出于安全状态</p>
+<h3 id="1-安全状态"><a href="#1-安全状态" class="headerlink" title="1.安全状态"></a>1.安全状态</h3><p>指系统能某种进程推进顺序为每个进程分配其所需资源，直至满足每个进程对资源的最大需求，使每个进程都可顺利地完成。</p>
+<h3 id="2-利用银行家算法避免死锁"><a href="#2-利用银行家算法避免死锁" class="headerlink" title="2.利用银行家算法避免死锁"></a>2.利用银行家算法避免死锁</h3><p>刚开始是为银行系统设计的，确保银行在发放现金贷款是，不会发生不能满足所有客户需要的情况</p>
+<h4 id="2-1-银行家算法中的数据结构"><a href="#2-1-银行家算法中的数据结构" class="headerlink" title="2.1.银行家算法中的数据结构"></a>2.1.银行家算法中的数据结构</h4><ul>
+<li>可利用资源向量Available。一个含有m个元素的数组</li>
+<li>最大需求矩阵Max。一个n x m的矩阵。定义n个进程中的每一个进程对m类资源的最大需求</li>
+<li>分配矩阵Allocation。一个n x m的矩阵。定义系统中每一类资源当前已分配给每一道进程的资源数</li>
+<li>需求矩阵Need。一个n x m的矩阵。表示每一个进程尚需的各类资源数</li>
+</ul>
+<h4 id="2-2-银行家算法"><a href="#2-2-银行家算法" class="headerlink" title="2.2.银行家算法"></a>2.2.银行家算法</h4><p>步骤：</p>
+<ul>
+<li>1.如果Request  &lt;= Need,转向步骤二，否则出错</li>
+<li>2.如果Available &lt;= Allocation，转向步骤三，否则等待</li>
+<li>3.系统试探把资源分配给进程，并修改下面数值<ul>
+<li>Available = Available - Request</li>
+<li>Allocation = Allocation + Request</li>
+<li>Need = Need - Request</li>
+</ul>
+</li>
+<li>4.系统执行安全性算法，处于安全状态则分配</li>
+</ul>
+<h4 id="2-3-安全性算法"><a href="#2-3-安全性算法" class="headerlink" title="2.3.安全性算法"></a>2.3.安全性算法</h4><ul>
+<li>1.设置两向量：<ul>
+<li>（1）工作向量Work，表示系统可提供给进程继续运行所需的各类资源数目，刚开始Work = Available。</li>
+<li>（2）Finish：表示系统是否有足够的资源分配给进程，刚开始Finish = false</li>
+</ul>
+</li>
+<li>2.从进程集合找到一个满足下述条件的进程，若找到，转到步骤3，否则转到步骤4<ul>
+<li>Finish = false</li>
+<li>Need = Work</li>
+</ul>
+</li>
+<li>3.当进程获得资源后。可顺利执行，直至完成，并释放出分配给它的资源，故执行<ul>
+<li>Work = Work + Allocation</li>
+<li>Finish = true</li>
+<li>go to step2</li>
+</ul>
+</li>
+<li>4.如果所有进程的Finish = true都满足，则表示系统处于安全状态。</li>
+</ul>
+
+      
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/操作系统/" rel="tag"># 操作系统</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/26/三、jQuery中的DOM操作/" rel="next" title="三、jQuery中的DOM操作">
+                <i class="fa fa-chevron-left"></i> 三、jQuery中的DOM操作
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -363,6 +547,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -383,8 +571,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -444,6 +641,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#处理机调度的层次和调度算法的目标"><span class="nav-number">1.</span> <span class="nav-text">处理机调度的层次和调度算法的目标</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-处理机调度的层次"><span class="nav-number">1.1.</span> <span class="nav-text">1.处理机调度的层次</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作业与作业调度"><span class="nav-number">2.</span> <span class="nav-text">作业与作业调度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-作业"><span class="nav-number">2.1.</span> <span class="nav-text">1.作业</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-作业调度"><span class="nav-number">2.2.</span> <span class="nav-text">2.作业调度</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程调度"><span class="nav-number">3.</span> <span class="nav-text">进程调度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-任务"><span class="nav-number">3.1.</span> <span class="nav-text">1.任务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-调度机制"><span class="nav-number">3.2.</span> <span class="nav-text">2.调度机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-进程调度方式"><span class="nav-number">3.3.</span> <span class="nav-text">3.进程调度方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1非抢占方式"><span class="nav-number">3.3.1.</span> <span class="nav-text">3.1非抢占方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-抢占方式"><span class="nav-number">3.3.2.</span> <span class="nav-text">3.2.抢占方式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#死锁概述"><span class="nav-number">4.</span> <span class="nav-text">死锁概述</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-定义"><span class="nav-number">4.0.1.</span> <span class="nav-text">1.定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-产生的条件"><span class="nav-number">4.0.2.</span> <span class="nav-text">2.产生的条件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-处理死锁的方法"><span class="nav-number">4.0.3.</span> <span class="nav-text">3.处理死锁的方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#预防死锁"><span class="nav-number">5.</span> <span class="nav-text">预防死锁</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-破坏“请求和保持”条件"><span class="nav-number">5.1.</span> <span class="nav-text">1.破坏“请求和保持”条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-破坏“不可抢占”条件"><span class="nav-number">5.2.</span> <span class="nav-text">2.破坏“不可抢占”条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-破坏“循环等待”条件"><span class="nav-number">5.3.</span> <span class="nav-text">3.破坏“循环等待”条件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#避免死锁"><span class="nav-number">6.</span> <span class="nav-text">避免死锁</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-安全状态"><span class="nav-number">6.1.</span> <span class="nav-text">1.安全状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-利用银行家算法避免死锁"><span class="nav-number">6.2.</span> <span class="nav-text">2.利用银行家算法避免死锁</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-银行家算法中的数据结构"><span class="nav-number">6.2.1.</span> <span class="nav-text">2.1.银行家算法中的数据结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-银行家算法"><span class="nav-number">6.2.2.</span> <span class="nav-text">2.2.银行家算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-安全性算法"><span class="nav-number">6.2.3.</span> <span class="nav-text">2.3.安全性算法</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -585,6 +798,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
