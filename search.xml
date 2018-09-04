@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[JavaScript基础之面向对象(一)]]></title>
+    <url>%2F2018%2F09%2F04%2FJavaScript%E5%9F%BA%E7%A1%80%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1(%E4%B8%80)%2F</url>
+    <content type="text"><![CDATA[创建对象工厂模式用函数来封装以特定接口来创建对象 12345678910111213function createPerson(name,age,job)&#123; var o = new Object(); o.name = name; o.age = age; o.job = job; o.sayName = function()&#123; console.log(this.name); &#125; return o;&#125;var person1 = createPerson('jack',18,'teacher');var person2 = createPerson('rose',19,'doctor'); 存在的问题：没有解决对象的识别问题，即不能知道一个对象是什么类型 构造函数模式与工厂模式的不同： 没有显式地创建对象 直接将属性和方法赋给了this对象 没有return语句 1234567891011function Person(name,age,job)&#123; this.name = name; this.age = age; this.job = job; this.sayName = function()&#123; console.log(this.name) &#125;&#125;var person1 = new Person('jack',18,'teacher');var person1 = new Person('rose',19,'doctor'); 函数名以大写开头，用于区别其他函数。 使用new创建新实例来调用构造函数必须经历一下四个步骤： 创建一个新对象 将构造函数的作用域赋给新对象（因此this就指向了这个新对象） 执行构造函数中的代码（为这个新对象添加属性） 返回新对象 使用构造函数模式可以使用instanceof操作符来检测对象类型，这也正是构造函数胜过工厂模式的地方。 任何函数，只要通过new操作符来调用，那它就可以作为构造函数；不通过new操作符来调用，跟普通函数没什么区别，若不使用new操作符调用构造函数，则属性和方法都被添加给window对象了 12Person('jack',18,'teacher');window.sayName(); //jack 存在的问题：每个方法都要在每个实例上重新创建一遍。如person1和person2都有sayName方法，两个方法不是同一Function的实例，而创建两个同样任务的Function实例是没有必要的 原型模式原型对象只要创建一个函数，就会为该函数创建一个prototype属性，指向函数的原型对象。原型对象都会自动获得一个constructor属性，这个属性包含一个指向prototype属性所在函数的指针。如Person.prototype.constructor指向Person 创建自定义的构造函数后，其原型对象默认只会取得constructor属性，其他属性和方法都是从Object继承而来的，当调用函数创建一个新实例后，该实例的内部将包含一个指针，指向构造函数的原型对象。这个指针即[[prototype]],它是没办法访问的，但在Firefox，Safari和Chrome中每个对象都支持属性proto,，其他浏览器不可见。这个指针是 存在实例与构造函数的原型对象之间 isPrototypeOf()方法和getPrototypeOf()方法虽然无法访问[[prototype]]，但可以通过isPrototypeOf()方法和getPrototypeOf()方法来确定对象之间是否存在这种关系 组合使用构造函数模式和原型模式动态原型模式寄生构造函数模式和原型模式稳妥构造函数模式]]></content>
+      <categories>
+        <category>js</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[四、jQuery中的事件和动画]]></title>
+    <url>%2F2018%2F08%2F29%2F%E5%9B%9B%E3%80%81jQuery%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%92%8C%E5%8A%A8%E7%94%BB%2F</url>
+    <content type="text"><![CDATA[1.jQuery中的事件事件绑定bind()方法：bind(type,[data],fn),可多次调用 合成事件hover(enter,leave)方法:光标移动到元素上enter，触发第一个函数，移除触发第二个函数leave。相当于替代了bind(‘mouseenter’)和bind(‘mouseleave) toggle(fn1,fn2,…fnN)方法：第一次点击元素触发第一个函数，第二次触发第二个函数… 另一个用法是切换元素的可见状态，用于显示和隐藏： 1234567$(function()&#123; $(#btn).toggle(function()&#123; $(this).next().toggle() &#125;,function()&#123; $(this).next().toggle() &#125;)&#125;) 事件冒泡 阻止事件冒泡：stopPropagation()方法 阻止默认行为：preventDefault()方法。 preventDefault()方法能阻止表单的提交行为，如果想同时对事件对象停止冒泡和默认行为，可以用return false方式 注意：jQuery不支持事件捕获 常见事件对象的属性（1）event.type属性：获取事件类型 （2）event.stopPropagation()方法：阻止冒泡 （3）event.preventDefault()方法：阻止默认的事件行为 （3）event.taget属性：获取触发事件的元素 （3）event.pageX/event.pageY属性：获取光标相对于页面的x坐标和y坐标。不用jQuery有兼容性问题（3）event.which属性：在鼠标单击事件中获取到鼠标的左，中，右键，返回1,2,3；在键盘事件中获取键盘的按键 （3）event.metaKey属性： 移除事件模拟事件其他用法2.jQuery中的动画简单方法自定义动画方法]]></content>
+      <categories>
+        <category>jQuery</category>
+      </categories>
+      <tags>
+        <tag>jQuery</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[四、存储器管理]]></title>
+    <url>%2F2018%2F08%2F29%2F%E5%9B%9B%E3%80%81%E5%AD%98%E5%82%A8%E5%99%A8%E7%AE%A1%E7%90%86%2F</url>
+    <content type="text"><![CDATA[存储器的层次结构计算机的存储层次分为三层，三层中还可以再细分 最高层为CPU寄存器 寄存器 中间为主存 高速缓存 主存储器 磁盘缓存 最底层是辅存。 固定磁盘 可移动存储介质 主存储器：简称内存或主存，用于保存进程运行时的程序和数据 寄存器：具有与处理机相同的速度，访问速度很快，能与CPU协调工作，但价格昂贵，容量小 高速缓存：介于寄存器和存储器之间的存储器，主要用于备份主存中较常用的数据，以减少处理机对主存的访问次数 磁盘缓存：用于暂时存放频繁使用的一部分磁盘数据和信息，以减少访问磁盘的速度 程序的装入和链接用户程序要在系统中运行，就必须先装入内存，然后在将其转变为一个可以执行的程序，通常要经过以下步骤 编译 链接 装入 1.装入方式 绝对装入 可重定向装入 2.链接 静态链接方式：在程序运行前，现将各目标模块及它们所需要的库函数链接成一个完整的装配模块 装入时动态链接：在装入内存时，采用边装入边链接的链接方式 连续分配存储管理方式对换分页存储管理方式分段存储管理方式]]></content>
+      <categories>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>操作系统</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[三、处理机调度与死锁]]></title>
     <url>%2F2018%2F08%2F28%2F%E4%B8%89%E3%80%81%E5%A4%84%E7%90%86%E6%9C%BA%E8%B0%83%E5%BA%A6%E4%B8%8E%E6%AD%BB%E9%94%81%2F</url>
     <content type="text"><![CDATA[处理机调度的层次和调度算法的目标1.处理机调度的层次 高级调度：调度对象是作业，主要用于多道批处理系统中 中级调度：即内存调度。目的是提高内存的利用率和系统的吞吐率 低级调度：调度对象是进程 作业与作业调度1.作业概念：作业不仅包含了通常的程序和数据，而且还应配有一份作业说明说，系统根据说明书来对程序的运行进行控制。 主要任务：根据作业控制块中的信息，检查系统中的资源能否满足作业对资源的需求，以及按照一定的调度算法，从外存的后备队列中选取某些作业调入内存，并为它创建进程，分配必要的资源。然后再将新创建的进程排在就绪队列上等待调度 2.作业调度先来先服务调度算法：优先考虑在系统中等待时间最长的作业，不管该作业所需执行时间的长短。 短作业优先的调度算法：以作业的长短计算优先级，作业越短，其优先级越高 进程调度1.任务 保存处理机的现场信息 按某种算法选取进程 吧处理器分配给进程 2.调度机制 排队器：事先将就绪进程按一定策略排队 分派器；将处理机分配给选到的进程 上下文切换器：进行上下文切换 3.进程调度方式3.1非抢占方式一旦把处理机分配给某个进程时，就一直让它进行下去，不会因为中断请求等将去抢占正在运行进程的处理机。 3.2.抢占方式允许调度程序根据某些规则，去暂停某个正在执行的进程，将已分配给该进程的处理机重新分配给另一进程 遵循一定的原则： 优先权原则 短进程优先原则 时间片原则 死锁概述1.定义如果一组进程中的每一个进程都在等待仅由该组进程中的其它进程才能引发的事件，则该组进程是死锁的 可抢占资源是不会引起死锁的，像CPU、主存等 不可抢占资源会引起死锁，像磁带机，打印机等 2.产生的条件同时具备以下四个条件 互斥条件 请求和保持条件 不可抢占条件 循环等待条件 3.处理死锁的方法 预防死锁 避免死锁 检测死锁 解除死锁 预防死锁原理：因为互斥条件是非共享设备所必须的，不仅不能改变，还应加以保证，所以主要是破坏产生死锁的后三个条件 1.破坏“请求和保持”条件保证当一个进程在请求资源时，它不能持有不可抢占资源。通过两种协议实现这种保证 规定所有进程在开始运行前，必须一次性的申请其在整个运行过程中所需的全部资源 允许一个进程只获得运行初期所需的资源后，便开始运行，然后在逐步的边释放边请求资源 2.破坏“不可抢占”条件规定当一个已经保持了某些不可被抢占资源的进程，提出新的资源请求而不能得到满足时，它必须释放已经保持的所有资源，待以后需要时再重新申请 3.破坏“循环等待”条件对系统所有资源类型进行线性排序，进程只能按编号顺序来请求资源。 避免死锁在程序运行时避免发生死锁，确保系统始终出于安全状态 1.安全状态指系统能某种进程推进顺序为每个进程分配其所需资源，直至满足每个进程对资源的最大需求，使每个进程都可顺利地完成。 2.利用银行家算法避免死锁刚开始是为银行系统设计的，确保银行在发放现金贷款是，不会发生不能满足所有客户需要的情况 2.1.银行家算法中的数据结构 可利用资源向量Available。一个含有m个元素的数组 最大需求矩阵Max。一个n x m的矩阵。定义n个进程中的每一个进程对m类资源的最大需求 分配矩阵Allocation。一个n x m的矩阵。定义系统中每一类资源当前已分配给每一道进程的资源数 需求矩阵Need。一个n x m的矩阵。表示每一个进程尚需的各类资源数 2.2.银行家算法步骤： 1.如果Request &lt;= Need,转向步骤二，否则出错 2.如果Available &lt;= Allocation，转向步骤三，否则等待 3.系统试探把资源分配给进程，并修改下面数值 Available = Available - Request Allocation = Allocation + Request Need = Need - Request 4.系统执行安全性算法，处于安全状态则分配 2.3.安全性算法 1.设置两向量： （1）工作向量Work，表示系统可提供给进程继续运行所需的各类资源数目，刚开始Work = Available。 （2）Finish：表示系统是否有足够的资源分配给进程，刚开始Finish = false 2.从进程集合找到一个满足下述条件的进程，若找到，转到步骤3，否则转到步骤4 Finish = false Need = Work 3.当进程获得资源后。可顺利执行，直至完成，并释放出分配给它的资源，故执行 Work = Work + Allocation Finish = true go to step2 4.如果所有进程的Finish = true都满足，则表示系统处于安全状态。]]></content>
