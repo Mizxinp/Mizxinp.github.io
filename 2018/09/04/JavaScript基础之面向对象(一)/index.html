@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Mizxinp&#39;s Blog">
 <meta property="og:description" content="创建对象工厂模式用函数来封装以特定接口来创建对象 12345678910111213function createPerson(name,age,job)&amp;#123;    var o = new Object();    o.name = name;    o.age = age;    o.job = job;    o.sayName = function()&amp;#123;        co">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-05T13:18:49.555Z">
+<meta property="og:updated_time" content="2018-09-06T12:08:01.859Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript基础之面向对象(一)">
 <meta name="twitter:description" content="创建对象工厂模式用函数来封装以特定接口来创建对象 12345678910111213function createPerson(name,age,job)&amp;#123;    var o = new Object();    o.name = name;    o.age = age;    o.job = job;    o.sayName = function()&amp;#123;        co">
@@ -353,7 +353,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,706字
+                  1,712字
                 </span>
               
 
@@ -412,7 +412,7 @@
 <h4 id="存在的问题：-1"><a href="#存在的问题：-1" class="headerlink" title="存在的问题："></a>存在的问题：</h4><p>每个方法都要在每个实例上重新创建一遍。如person1和person2都有sayName方法，两个方法不是同一Function的实例，而创建两个同样任务的Function实例是没有必要的</p>
 <h2 id="原型模式"><a href="#原型模式" class="headerlink" title="原型模式"></a>原型模式</h2><p>使用prototype属性实现</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">Person.prototype.name = <span class="string">'jack'</span>;</span><br><span class="line">Person.prototype.age = <span class="number">18</span>;</span><br><span class="line">Person.prototype.job = <span class="string">'teacher'</span>;</span><br><span class="line">Person.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person();</span><br><span class="line">person1.sayName();  <span class="comment">//jack</span></span><br></pre></td></tr></table></figure>
-<p>简单的写法：</p>
+<p>可以使用字面量形式简写：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">Person.prototype = &#123;</span><br><span class="line">    name:<span class="string">'jack'</span>,</span><br><span class="line">    age:<span class="number">18</span>,</span><br><span class="line">    job:<span class="string">'teacher'</span>,</span><br><span class="line">    sayName:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>采用这种写法，constructor属性不再指向Person，指向Object构造函数</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//第一种写法</span></span><br><span class="line"><span class="built_in">console</span>.log(Person.constructor);    <span class="comment">//Person()&#123;&#125;</span></span><br><span class="line"><span class="comment">//第二种写法</span></span><br><span class="line"><span class="built_in">console</span>.log(Person.constructor);    <span class="comment">//Object() &#123; [native code] &#125;</span></span><br></pre></td></tr></table></figure>
@@ -478,6 +478,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/06/JavaScript基础之面向对象(二)/" rel="prev" title="JavaScript基础之面向对象(二)">
+                JavaScript基础之面向对象(二) <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -554,7 +558,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
