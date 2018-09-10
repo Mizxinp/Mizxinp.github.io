@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Mizxinp&#39;s Blog">
 <meta property="og:description" content="创建对象工厂模式用函数来封装以特定接口来创建对象 12345678910111213function createPerson(name,age,job)&amp;#123;    var o = new Object();    o.name = name;    o.age = age;    o.job = job;    o.sayName = function()&amp;#123;        co">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-06T12:08:01.859Z">
+<meta property="og:updated_time" content="2018-09-10T11:55:08.969Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript基础之面向对象(一)">
 <meta name="twitter:description" content="创建对象工厂模式用函数来封装以特定接口来创建对象 12345678910111213function createPerson(name,age,job)&amp;#123;    var o = new Object();    o.name = name;    o.age = age;    o.job = job;    o.sayName = function()&amp;#123;        co">
@@ -353,7 +353,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,712字
+                  1,708字
                 </span>
               
 
@@ -417,7 +417,7 @@
 <p>采用这种写法，constructor属性不再指向Person，指向Object构造函数</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//第一种写法</span></span><br><span class="line"><span class="built_in">console</span>.log(Person.constructor);    <span class="comment">//Person()&#123;&#125;</span></span><br><span class="line"><span class="comment">//第二种写法</span></span><br><span class="line"><span class="built_in">console</span>.log(Person.constructor);    <span class="comment">//Object() &#123; [native code] &#125;</span></span><br></pre></td></tr></table></figure>
 <h3 id="原型对象"><a href="#原型对象" class="headerlink" title="原型对象"></a>原型对象</h3><p>只要创建一个函数，就会为该函数创建一个prototype属性，指向函数的原型对象。原型对象都会自动获得一个constructor属性，这个属性包含一个指向prototype属性所在函数的指针。如Person.prototype.constructor指向Person</p>
-<p>创建自定义的构造函数后，其原型对象默认只会取得constructor属性，其他属性和方法都是从Object继承而来的，当调用函数创建一个新实例后，该实例的内部将包含一个指针，指向构造函数的原型对象。这个指针即[[prototype]],它是没办法访问的，但在Firefox，Safari和Chrome中每个对象都支持属性<strong>proto</strong>,其他浏览器不可见。这个指针是 <strong>存在实例与构造函数的原型对象之间</strong></p>
+<p>创建自定义的构造函数后，其原型对象默认只会取得constructor属性，其他属性和方法都是从Object继承而来的，当调用函数创建一个新实例后，该实例的内部将包含一个指针，指向构造函数的原型对象。这个指针即[[prototype]],它是没办法访问的，但每个对象都支持属性_proto_,其他浏览器不可见。这个指针是 <strong>存在实例与构造函数的原型对象之间</strong></p>
 <h4 id="isPrototypeOf-方法和getPrototypeOf-方法"><a href="#isPrototypeOf-方法和getPrototypeOf-方法" class="headerlink" title="isPrototypeOf()方法和getPrototypeOf()方法"></a>isPrototypeOf()方法和getPrototypeOf()方法</h4><p>虽然无法访问[[prototype]]，但可以通过isPrototypeOf()方法和getPrototypeOf()方法来确定对象之间是否存在这种关系</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(Person.prototype.isPrototypeOf(person1));  <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getPrototypeOf(person1) == Person.prototype) <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
 <h4 id="hasOwnProperty-方法"><a href="#hasOwnProperty-方法" class="headerlink" title="hasOwnProperty()方法"></a>hasOwnProperty()方法</h4><p>用于检测一个属性存在于实例中还是存在于原型中，只在给定属性存在于对象实例中，才会返回true</p>
@@ -558,7 +558,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

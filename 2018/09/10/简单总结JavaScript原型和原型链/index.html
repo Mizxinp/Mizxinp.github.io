@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="js," />
 
 
 
@@ -79,14 +79,20 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta name="description" content="prototype每个函数都有一个prototype属性，指向实例的原型。是构造函数和实例原型之间的桥梁。 _proto_除了null外，每一个JavaScript对象都有一proto个属性，指向该对象的原型。proto属性连接着实例与实例原型 constructor每个原型都有一个constructor属性，指向关联的构造函数 原型的原型原型对象是通过Object构造函数生成的。即Object.">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="简单总结JavaScript原型与原型链">
+<meta property="og:url" content="http://yoursite.com/2018/09/10/简单总结JavaScript原型和原型链/index.html">
 <meta property="og:site_name" content="Mizxinp&#39;s Blog">
+<meta property="og:description" content="prototype每个函数都有一个prototype属性，指向实例的原型。是构造函数和实例原型之间的桥梁。 _proto_除了null外，每一个JavaScript对象都有一proto个属性，指向该对象的原型。proto属性连接着实例与实例原型 constructor每个原型都有一个constructor属性，指向关联的构造函数 原型的原型原型对象是通过Object构造函数生成的。即Object.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-10T07:03:07.198Z">
+<meta property="og:image" content="http://pe3wjto58.bkt.clouddn.com/image/js%E5%8E%9F%E5%9E%8B.png">
+<meta property="og:updated_time" content="2018-09-10T11:53:25.088Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="标签">
+<meta name="twitter:title" content="简单总结JavaScript原型与原型链">
+<meta name="twitter:description" content="prototype每个函数都有一个prototype属性，指向实例的原型。是构造函数和实例原型之间的桥梁。 _proto_除了null外，每一个JavaScript对象都有一proto个属性，指向该对象的原型。proto属性连接着实例与实例原型 constructor每个原型都有一个constructor属性，指向关联的构造函数 原型的原型原型对象是通过Object构造函数生成的。即Object.">
+<meta name="twitter:image" content="http://pe3wjto58.bkt.clouddn.com/image/js%E5%8E%9F%E5%9E%8B.png">
 
 
 
@@ -116,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/10/简单总结JavaScript原型和原型链/"/>
 
 
 
 
 
-  <title>标签 | Mizxinp's Blog</title>
+  <title>简单总结JavaScript原型与原型链 | Mizxinp's Blog</title>
   
 
 
@@ -254,40 +260,201 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/10/简单总结JavaScript原型和原型链/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张兴平">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mizxinp's Blog">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">标签</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                目前共计 5 个标签
+          <h1 class="post-title" itemprop="name headline">简单总结JavaScript原型与原型链</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-10T18:55:07+08:00">
+                2018-09-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  136字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1分钟
+                </span>
+              
             </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/ES6/" style="font-size: 12px; color: #ccc">-ES6</a> <a href="/tags/MongoDB/" style="font-size: 12px; color: #ccc">MongoDB</a> <a href="/tags/jQuery/" style="font-size: 30px; color: #111">jQuery</a> <a href="/tags/js/" style="font-size: 30px; color: #111">js</a> <a href="/tags/操作系统/" style="font-size: 30px; color: #111">操作系统</a>
-            </div>
-          </div>
-        
-      </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h4 id="prototype"><a href="#prototype" class="headerlink" title="prototype"></a>prototype</h4><p>每个函数都有一个prototype属性，指向实例的原型。是构造函数和实例原型之间的桥梁。</p>
+<h4 id="proto"><a href="#proto" class="headerlink" title="_proto_"></a>_proto_</h4><p>除了null外，每一个JavaScript对象都有一<em>proto</em>个属性，指向该对象的原型。<em>proto</em>属性连接着实例与实例原型</p>
+<h4 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h4><p>每个原型都有一个constructor属性，指向关联的构造函数</p>
+<h4 id="原型的原型"><a href="#原型的原型" class="headerlink" title="原型的原型"></a>原型的原型</h4><p>原型对象是通过Object构造函数生成的。即Object.prototype。而Object.prototype的原型为null</p>
+<p>用一张图表示他们之间的关系<br><img src="http://pe3wjto58.bkt.clouddn.com/image/js%E5%8E%9F%E5%9E%8B.png" alt="原型链"></p>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag"># js</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/09/移动端分辨率问题/" rel="next" title="移动端分辨率问题">
+                <i class="fa fa-chevron-left"></i> 移动端分辨率问题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -320,8 +487,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -381,6 +557,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#prototype"><span class="nav-number">1.</span> <span class="nav-text">prototype</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#proto"><span class="nav-number">2.</span> <span class="nav-text">_proto_</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#constructor-NaN"><span class="nav-number">3.</span> <span class="nav-text">constructor</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#原型的原型"><span class="nav-number">4.</span> <span class="nav-text">原型的原型</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
