@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="js," />
+  <meta name="keywords" content="网络," />
 
 
 
@@ -79,20 +79,18 @@
 
 
 
-<meta name="description" content="prototype每个函数都有一个prototype属性，指向实例的原型。是构造函数和实例原型之间的桥梁。 _proto_除了null外，每一个JavaScript对象都有一proto个属性，指向该对象的原型。proto属性连接着实例与实例原型 constructor每个原型都有一个constructor属性，指向关联的构造函数 原型的原型原型对象是通过Object构造函数生成的。即Object.">
-<meta name="keywords" content="js">
+<meta name="description" content="文章基于《图解HTTP》  HTTP状态码是当客户端向服务端发送请求时，描述返回的请求结果。借助状态码，用户可以知道服务端是正常处理了请求还是出现李错误 状态码的类别    类别 原因短语     1XX 信息性状态码 接收的请求正在处理   2XX 成功状态码 请求正常处理完毕   3XX 冲定向状态码 需要附加操作以完成请求   4XX 客户端错误状态码 服务器无法处理请求   5XX 服务">
+<meta name="keywords" content="网络">
 <meta property="og:type" content="article">
-<meta property="og:title" content="简单总结JavaScript原型与原型链">
-<meta property="og:url" content="http://yoursite.com/2018/09/10/简单总结JavaScript原型和原型链/index.html">
+<meta property="og:title" content="了解一点HTTP(四)之HTTP状态码">
+<meta property="og:url" content="http://yoursite.com/2018/09/23/了解一点HTTP(四)之HTTP状态码/index.html">
 <meta property="og:site_name" content="Mizxinp&#39;s Blog">
-<meta property="og:description" content="prototype每个函数都有一个prototype属性，指向实例的原型。是构造函数和实例原型之间的桥梁。 _proto_除了null外，每一个JavaScript对象都有一proto个属性，指向该对象的原型。proto属性连接着实例与实例原型 constructor每个原型都有一个constructor属性，指向关联的构造函数 原型的原型原型对象是通过Object构造函数生成的。即Object.">
+<meta property="og:description" content="文章基于《图解HTTP》  HTTP状态码是当客户端向服务端发送请求时，描述返回的请求结果。借助状态码，用户可以知道服务端是正常处理了请求还是出现李错误 状态码的类别    类别 原因短语     1XX 信息性状态码 接收的请求正在处理   2XX 成功状态码 请求正常处理完毕   3XX 冲定向状态码 需要附加操作以完成请求   4XX 客户端错误状态码 服务器无法处理请求   5XX 服务">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://pe3wjto58.bkt.clouddn.com/image/js%E5%8E%9F%E5%9E%8B.png">
-<meta property="og:updated_time" content="2018-09-10T11:53:25.088Z">
+<meta property="og:updated_time" content="2018-09-23T13:28:42.545Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="简单总结JavaScript原型与原型链">
-<meta name="twitter:description" content="prototype每个函数都有一个prototype属性，指向实例的原型。是构造函数和实例原型之间的桥梁。 _proto_除了null外，每一个JavaScript对象都有一proto个属性，指向该对象的原型。proto属性连接着实例与实例原型 constructor每个原型都有一个constructor属性，指向关联的构造函数 原型的原型原型对象是通过Object构造函数生成的。即Object.">
-<meta name="twitter:image" content="http://pe3wjto58.bkt.clouddn.com/image/js%E5%8E%9F%E5%9E%8B.png">
+<meta name="twitter:title" content="了解一点HTTP(四)之HTTP状态码">
+<meta name="twitter:description" content="文章基于《图解HTTP》  HTTP状态码是当客户端向服务端发送请求时，描述返回的请求结果。借助状态码，用户可以知道服务端是正常处理了请求还是出现李错误 状态码的类别    类别 原因短语     1XX 信息性状态码 接收的请求正在处理   2XX 成功状态码 请求正常处理完毕   3XX 冲定向状态码 需要附加操作以完成请求   4XX 客户端错误状态码 服务器无法处理请求   5XX 服务">
 
 
 
@@ -122,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/10/简单总结JavaScript原型和原型链/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/23/了解一点HTTP(四)之HTTP状态码/"/>
 
 
 
 
 
-  <title>简单总结JavaScript原型与原型链 | Mizxinp's Blog</title>
+  <title>了解一点HTTP(四)之HTTP状态码 | Mizxinp's Blog</title>
   
 
 
@@ -272,7 +270,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/10/简单总结JavaScript原型和原型链/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/23/了解一点HTTP(四)之HTTP状态码/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张兴平">
@@ -289,7 +287,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">简单总结JavaScript原型与原型链</h1>
+          <h1 class="post-title" itemprop="name headline">了解一点HTTP(四)之HTTP状态码</h1>
         
 
         <div class="post-meta">
@@ -301,8 +299,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-10T18:55:07+08:00">
-                2018-09-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-23T20:54:29+08:00">
+                2018-09-23
               </time>
             
 
@@ -324,8 +322,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
+                  <a href="/categories/网络/" itemprop="url" rel="index">
+                    <span itemprop="name">网络</span>
                   </a>
                 </span>
 
@@ -355,7 +353,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  136字
+                  694字
                 </span>
               
 
@@ -371,7 +369,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1分钟
+                  2分钟
                 </span>
               
             </div>
@@ -392,11 +390,63 @@
       
 
       
-        <h4 id="prototype"><a href="#prototype" class="headerlink" title="prototype"></a>prototype</h4><p>每个函数都有一个prototype属性，指向实例的原型。是构造函数和实例原型之间的桥梁。</p>
-<h4 id="proto"><a href="#proto" class="headerlink" title="_proto_"></a>_proto_</h4><p>除了null外，每一个JavaScript对象都有一<em>proto</em>个属性，指向该对象的原型。<em>proto</em>属性连接着实例与实例原型</p>
-<h4 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h4><p>每个原型都有一个constructor属性，指向关联的构造函数</p>
-<h4 id="原型的原型"><a href="#原型的原型" class="headerlink" title="原型的原型"></a>原型的原型</h4><p>原型对象是通过Object构造函数生成的。即Object.prototype。而Object.prototype的原型为null</p>
-<p>用一张图表示他们之间的关系<br><img src="http://pe3wjto58.bkt.clouddn.com/image/js%E5%8E%9F%E5%9E%8B.png" alt="原型链"></p>
+        <blockquote>
+<p>文章基于《图解HTTP》</p>
+</blockquote>
+<p>HTTP状态码是当客户端向服务端发送请求时，描述返回的请求结果。借助状态码，用户可以知道服务端是正常处理了请求还是出现李错误</p>
+<h3 id="状态码的类别"><a href="#状态码的类别" class="headerlink" title="状态码的类别"></a>状态码的类别</h3><table>
+<thead>
+<tr>
+<th></th>
+<th>类别</th>
+<th>原因短语</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1XX</td>
+<td>信息性状态码</td>
+<td>接收的请求正在处理</td>
+</tr>
+<tr>
+<td>2XX</td>
+<td>成功状态码</td>
+<td>请求正常处理完毕</td>
+</tr>
+<tr>
+<td>3XX</td>
+<td>冲定向状态码</td>
+<td>需要附加操作以完成请求</td>
+</tr>
+<tr>
+<td>4XX</td>
+<td>客户端错误状态码</td>
+<td>服务器无法处理请求</td>
+</tr>
+<tr>
+<td>5XX</td>
+<td>服务器错误状态码</td>
+<td>服务器处理请求出错</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2XX-成功"><a href="#2XX-成功" class="headerlink" title="2XX 成功"></a>2XX 成功</h3><h4 id="200-状态码"><a href="#200-状态码" class="headerlink" title="200 状态码"></a>200 状态码</h4><p>客户端发来的请求在服务端被正常处理了</p>
+<h4 id="204-状态码"><a href="#204-状态码" class="headerlink" title="204 状态码"></a>204 状态码</h4><p>代表服务端接收的请求已成功处理，但在返回的响应报文中不含实体的主体部分。一般在只需要从客户端网服务器发送信息，而对客户端不需要发送新信息的情况下使用</p>
+<h4 id="206-状态码"><a href="#206-状态码" class="headerlink" title="206 状态码"></a>206 状态码</h4><p>表示客户端进行了范围请求，而服务器成功执行了这部分的GET请求</p>
+<h3 id="3XX-重定向"><a href="#3XX-重定向" class="headerlink" title="3XX 重定向"></a>3XX 重定向</h3><h4 id="301-状态码"><a href="#301-状态码" class="headerlink" title="301 状态码"></a>301 状态码</h4><p>永久性重定向，表示资源已被分配了新的URI，以后应使用资源现在所指的URI</p>
+<h4 id="302-状态码"><a href="#302-状态码" class="headerlink" title="302 状态码"></a>302 状态码</h4><p>临时重定向。表示资源已被分配了新的URI，用户 <strong>本次</strong> 能使用新的URI</p>
+<h4 id="303-状态码"><a href="#303-状态码" class="headerlink" title="303 状态码"></a>303 状态码</h4><p>表示请求对应的资源存在值另一个URI，应使用 <strong>GET</strong> 请求方法定向获取请求的资源。</p>
+<p>301，302，,303状态码返回时，几乎所有的浏览器都会把POST改成GET。即使301，,302标准禁止将POST改成GET</p>
+<h4 id="304-状态码"><a href="#304-状态码" class="headerlink" title="304 状态码"></a>304 状态码</h4><p>表示客户端附带条件请求时，服务端允许访问资源，但未满足条件的情况。</p>
+<h4 id="307-状态码"><a href="#307-状态码" class="headerlink" title="307 状态码"></a>307 状态码</h4><p>临时重定向。区别在于307状态码不会从POST变成GET</p>
+<h3 id="4XX-客户端错误"><a href="#4XX-客户端错误" class="headerlink" title="4XX 客户端错误"></a>4XX 客户端错误</h3><h4 id="400-状态码"><a href="#400-状态码" class="headerlink" title="400 状态码"></a>400 状态码</h4><p>表示请求报文中存在语法错误。</p>
+<h4 id="401-状态码"><a href="#401-状态码" class="headerlink" title="401 状态码"></a>401 状态码</h4><p>表示请求需要通过HTTP认证的认证信息。若之前已进行过一次请求，则表示用户认证失败</p>
+<h4 id="403-状态码"><a href="#403-状态码" class="headerlink" title="403 状态码"></a>403 状态码</h4><p>表示请求资源的访问被服务器拒绝了。</p>
+<h4 id="404-状态码"><a href="#404-状态码" class="headerlink" title="404 状态码"></a>404 状态码</h4><p>表示服务器上无法找到请求的资源</p>
+<h3 id="5XX-服务器错误"><a href="#5XX-服务器错误" class="headerlink" title="5XX 服务器错误"></a>5XX 服务器错误</h3><h4 id="500-状态码"><a href="#500-状态码" class="headerlink" title="500 状态码"></a>500 状态码</h4><p>表示服务器在执行请求时发生了错误。</p>
+<h4 id="503-状态码"><a href="#503-状态码" class="headerlink" title="503 状态码"></a>503 状态码</h4><p>表示服务器暂时处于超负载或正在进行停机维护，现在无法处理请求。</p>
+<p><strong>注意</strong></p>
+<p>不少返回的状态码响应都是错误的，但是用户可能察觉不到这点，比如Web应用程序内部发生错误，状态码还是返回200。</p>
 
       
     </div>
@@ -414,7 +464,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/js/" rel="tag"># js</a>
+            <a href="/tags/网络/" rel="tag"># 网络</a>
           
         </div>
       
@@ -427,8 +477,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/09/移动端分辨率问题/" rel="next" title="移动端分辨率问题">
-                <i class="fa fa-chevron-left"></i> 移动端分辨率问题
+              <a href="/2018/09/21/了解一点HTTP(三)之HTTP报文/" rel="next" title="了解一点HTTP(三)之HTTP报文">
+                <i class="fa fa-chevron-left"></i> 了解一点HTTP(三)之HTTP报文
               </a>
             
           </div>
@@ -436,10 +486,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/18/大杂烩之函数/" rel="prev" title="零散阅读">
-                零散阅读 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -571,7 +617,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#prototype"><span class="nav-number">1.</span> <span class="nav-text">prototype</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#proto"><span class="nav-number">2.</span> <span class="nav-text">_proto_</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#constructor-NaN"><span class="nav-number">3.</span> <span class="nav-text">constructor</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#原型的原型"><span class="nav-number">4.</span> <span class="nav-text">原型的原型</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#状态码的类别"><span class="nav-number">1.</span> <span class="nav-text">状态码的类别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2XX-成功"><span class="nav-number">2.</span> <span class="nav-text">2XX 成功</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#200-状态码"><span class="nav-number">2.1.</span> <span class="nav-text">200 状态码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#204-状态码"><span class="nav-number">2.2.</span> <span class="nav-text">204 状态码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#206-状态码"><span class="nav-number">2.3.</span> <span class="nav-text">206 状态码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3XX-重定向"><span class="nav-number">3.</span> <span class="nav-text">3XX 重定向</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#301-状态码"><span class="nav-number">3.1.</span> <span class="nav-text">301 状态码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#302-状态码"><span class="nav-number">3.2.</span> <span class="nav-text">302 状态码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#303-状态码"><span class="nav-number">3.3.</span> <span class="nav-text">303 状态码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#304-状态码"><span class="nav-number">3.4.</span> <span class="nav-text">304 状态码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#307-状态码"><span class="nav-number">3.5.</span> <span class="nav-text">307 状态码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4XX-客户端错误"><span class="nav-number">4.</span> <span class="nav-text">4XX 客户端错误</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#400-状态码"><span class="nav-number">4.1.</span> <span class="nav-text">400 状态码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#401-状态码"><span class="nav-number">4.2.</span> <span class="nav-text">401 状态码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#403-状态码"><span class="nav-number">4.3.</span> <span class="nav-text">403 状态码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#404-状态码"><span class="nav-number">4.4.</span> <span class="nav-text">404 状态码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5XX-服务器错误"><span class="nav-number">5.</span> <span class="nav-text">5XX 服务器错误</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#500-状态码"><span class="nav-number">5.1.</span> <span class="nav-text">500 状态码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#503-状态码"><span class="nav-number">5.2.</span> <span class="nav-text">503 状态码</span></a></li></ol></li></ol></div>
             
 
           </div>
