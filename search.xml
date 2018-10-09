@@ -1,6 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Less简单使用]]></title>
+    <url>%2F2018%2F10%2F09%2FLess%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[css预编译语言真是大大提升了开发效率，和代码的维护性，本文说一说Less的简单使用 变量就像js声明变量一样，只是用的是@符号，可以很轻松的改全局样式 Less写法： 12345@width:100px;#header&#123; width:@width;&#125; 编译后： 123#header&#123; width:100px&#125; 嵌套Less写法： 1234567891011121314#header&#123; h1&#123; font-size:20px; &#125; div&#123; font-size:16px; a&#123; font-size:20px; &amp;:hover&#123; color:red; &#125; &#125; &#125;&#125; 编译后： 123456789101112#header h1&#123; font-size:20px;&#125;#header div&#123; font-size:16px;&#125;#header div a&#123; font-size:20px;&#125;#header div a:hover&#123; color:red;&#125; 函数和运算可以进行加，减，乘，除计算。还内置里很多函数供我们使用 Less写法： 1234567@base-color:#111;@base-width:50px;#header&#123; width:(@base-width + 30px); color:(@base-color * 3);&#125; 编译后： 1234#header&#123; width:80px; color:#333;&#125; ##混合 类似函数，可以先定义个函数，然后在需要使用它的地方调用，也可以传递参数。用在css3兼容方面特别好 Less写法： 1234567891011121314.border-radius (@radius: 10px) &#123; -webkit-border-radius: @radius; -moz-border-radius: @radius; -ms-border-radius: @radius; -o-border-radius: @radius; border-radius: @radius;&#125;#header &#123; .border-radius;&#125;#nav &#123; .border-radius(15px);&#125; 编译后： 1234567891011121314#header &#123; -webkit-border-radius: 10px; -moz-border-radius: 10px; -ms-border-radius: 10px; -o-border-radius: 10px; border-radius: 10px;&#125;#nav &#123; -webkit-border-radius: 15px; -moz-border-radius: 15px; -ms-border-radius: 15px; -o-border-radius: 15px; border-radius: 15px;&#125;]]></content>
+      <categories>
+        <category>css</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ES6系列之let和const]]></title>
+    <url>%2F2018%2F10%2F05%2FES6%E7%B3%BB%E5%88%97%E4%B9%8Blet%E5%92%8Cconst%2F</url>
+    <content type="text"><![CDATA[var存在的问题可以重复声明 无法限制修改没有块级作用域]]></content>
+      <categories>
+        <category>js</category>
+        <category>ES6</category>
+      </categories>
+      <tags>
+        <tag>ES6</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[了解一点HTTP(七)之HTTPS]]></title>
+    <url>%2F2018%2F10%2F05%2F%E4%BA%86%E8%A7%A3%E4%B8%80%E7%82%B9HTTP(%E4%B8%83)%E4%B9%8BHTTPS%2F</url>
+    <content type="text"><![CDATA[HTTP的缺点使用明文进行通信HTTP本身不具备加密的功能，都是以明文进行通信的，这样通信内容很可能被窃听 不验证通信方的身份HTTP协议中的请求和响应不会对通信方进行确认，及任何人都可以发请求，服务端接受到请求，不管对方是谁都会返回一个响应。 无法证明报文的完整性因为无法证明报文的完整性，所以就无法判断信息的准确性。 于是就有里HTTPS HTTPS那什么是HTTPS呢？HTTPS其实就是HTTP加上加密处理和认证以及完整性保护。简单来说，HTTPS其实就是加了SSL（安全套接字）的HTTP。 加密方式共享密钥加密加密和解密都使用一个密钥的方式。存在的缺点是无法保证安全的转交和保管密钥。 公开密钥加密使用两把密钥加密，很好的解决了共享密钥加密的问题。公开密钥加密有一把私有密钥和一把公开密钥。私有密钥不能告诉其他人，而公开密钥可以。 当双方进行通信时，发送密文的一方使用对方的公开密钥进行加密处理，然后对方收到加密信息后用自己的私有密钥进行解密。 HTTPS的混合加密机制HTTPS采用共享密钥加密和公开密钥加密两者并用的混合加密机制。 第一次使用公开密钥加密方式安全的交换在稍后的共享密钥加密中使用的密钥。然后在确保交换密钥是安全的前提下，使用共享密钥加密方式进行通信。 证明公开密钥正确性的证书虽说公开密钥加密方式比共享密钥方式好，但是公开密钥加密方式也有缺点，它的处理速度没有共享加密方式快。还有就是无法证明公开密钥本身就是货真价实的公开密钥 所以就有了数字证书认证机构和相关机构颁发的公开密钥证书： 首先服务器方向机构申请公开密钥。机构合适身份后向公开密钥做数字签名，将公开密钥放入公钥证书后绑定在一起。然后服务器将证书发给客户端。客户端接受到证书后，使用公开密钥对证书上的数字签名就行认证。验证成功后就表示服务器的公开密钥是有效的。]]></content>
+      <categories>
+        <category>网络</category>
+      </categories>
+      <tags>
+        <tag>网络</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[了解一点HTTP(六)之HTTP首部]]></title>
+    <url>%2F2018%2F10%2F05%2F%E4%BA%86%E8%A7%A3%E4%B8%80%E7%82%B9HTTP(%E5%85%AD)%E4%B9%8BHTTP%E9%A6%96%E9%83%A8%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>网络</category>
+      </categories>
+      <tags>
+        <tag>网络</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[了解一点HTTP(五)之Web服务器]]></title>
+    <url>%2F2018%2F09%2F25%2F%E4%BA%86%E8%A7%A3%E4%B8%80%E7%82%B9HTTP(%E4%BA%94)%E4%B9%8BWeb%E6%9C%8D%E5%8A%A1%E5%99%A8%2F</url>
+    <content type="text"><![CDATA[文章基于《图解HTTP》 虚拟主机利用一台服务器，即可为多位客户持有的域名运行各自不同的网站。 当两个域名同时部署在同一个服务器上时，使用DNS服务器解析域名后，两者的访问IP地址会是相同的。因此在发送HTTP请求时，必须在Host首部内完整指定主机名或域名的URL 通信数据转发程序：代理，网关，隧道这些应用和服务器可以将请求发送给通信线路上的下一站服务器，并且能接收服务器从那台服务器发送的响应再转发给客户端 代理一种有转发功能的应用程序。接收客户发送的请求并转发给服务器，同时接收服务器返回的响应并转发给客户端 每次通过代理服务器转发请求或响应时，会追加Via首部信息 使用服务器的原因：可以利用缓存技术减少网络带宽的流量，组织内部针对特定网站的访问控制，以获取访问日志为主要目的。 缓存缓存代理代理转发响应时，缓存代理会预先将资源的副本(缓存)保存在代理服务器上，当代理再次接收相同资源的响应时，就不需要从源服务器获取资源，直接从之前的缓存的资源作为响应。这样避免多次从服务器转发资源，节省了通信流量和通信时间 但缓存也是有有效期的，若判断缓存失效，缓存服务器会再次从原服务器上获取资源。 客户端缓存客户端缓存称为临时网络文件。若浏览器缓存有效，就不必再向服务器请求相同的资源了，可以直接从本地磁盘内读取 网关转发其他服务器通信数据的服务器，接收从客户端发送来的请求时，可以像自己拥有资源的服务器一样对请求进行处理。 网关能使通信线路上的服务器提供非HTTP协议服务 隧道在相距甚远的客户端与服务器两者之间进行中转。隧道能按要求建立起一条鱼其他服务器的通信线路。可以确保客户端与服务器进行安全的通信 隧道本身不会去解析HTTP请求，也就是说，请求保持原样中转给之后的服务器。隧道会在通信双发断开连接时结束]]></content>
+      <categories>
+        <category>网络</category>
+      </categories>
+      <tags>
+        <tag>网络</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[了解一点HTTP(四)之HTTP状态码]]></title>
     <url>%2F2018%2F09%2F23%2F%E4%BA%86%E8%A7%A3%E4%B8%80%E7%82%B9HTTP(%E5%9B%9B)%E4%B9%8BHTTP%E7%8A%B6%E6%80%81%E7%A0%81%2F</url>
     <content type="text"><![CDATA[文章基于《图解HTTP》 HTTP状态码是当客户端向服务端发送请求时，描述返回的请求结果。借助状态码，用户可以知道服务端是正常处理了请求还是出现李错误 状态码的类别 类别 原因短语 1XX 信息性状态码 接收的请求正在处理 2XX 成功状态码 请求正常处理完毕 3XX 冲定向状态码 需要附加操作以完成请求 4XX 客户端错误状态码 服务器无法处理请求 5XX 服务器错误状态码 服务器处理请求出错 2XX 成功200 状态码客户端发来的请求在服务端被正常处理了 204 状态码代表服务端接收的请求已成功处理，但在返回的响应报文中不含实体的主体部分。一般在只需要从客户端网服务器发送信息，而对客户端不需要发送新信息的情况下使用 206 状态码表示客户端进行了范围请求，而服务器成功执行了这部分的GET请求 3XX 重定向301 状态码永久性重定向，表示资源已被分配了新的URI，以后应使用资源现在所指的URI 302 状态码临时重定向。表示资源已被分配了新的URI，用户 本次 能使用新的URI 303 状态码表示请求对应的资源存在值另一个URI，应使用 GET 请求方法定向获取请求的资源。 301，302，,303状态码返回时，几乎所有的浏览器都会把POST改成GET。即使301，,302标准禁止将POST改成GET 304 状态码表示客户端附带条件请求时，服务端允许访问资源，但未满足条件的情况。 307 状态码临时重定向。区别在于307状态码不会从POST变成GET 4XX 客户端错误400 状态码表示请求报文中存在语法错误。 401 状态码表示请求需要通过HTTP认证的认证信息。若之前已进行过一次请求，则表示用户认证失败 403 状态码表示请求资源的访问被服务器拒绝了。 404 状态码表示服务器上无法找到请求的资源 5XX 服务器错误500 状态码表示服务器在执行请求时发生了错误。 503 状态码表示服务器暂时处于超负载或正在进行停机维护，现在无法处理请求。 注意 不少返回的状态码响应都是错误的，但是用户可能察觉不到这点，比如Web应用程序内部发生错误，状态码还是返回200。]]></content>
