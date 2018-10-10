@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="-ES6," />
+  <meta name="keywords" content="css," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="写在前面： ​    想了解更多有关回调的，可以去看这篇文章Callback Hell ​    想了解更多有关Promise的使用，推荐去阮一峰老师的ES6教程阮一峰Promise ​    因最近在学nodejs，所以文章结合node进行说明  回调函数解决异步编程先简单了解一下回调函数解决异步操作所引起的回调地狱问题。 我们知道异步编程无法保证代码的顺序性，如 12345678910111">
-<meta name="keywords" content="-ES6">
+<meta name="description" content="在说rem之前先说说移动端的适配  移动端适配通常有以下几种方案：  伸缩布局：用flex实现 流式布局：利用百分比实现 响应式布局：利用媒体查询实现 rem适配  前面三种共同点就是只能做到宽度的适配，高度则不行。而rem则实现宽高都能适配（利用等比缩放） rem目前，IE9+，Firefox、Chrome、Safari、Opera 的主流版本都支持了 rem。对于不支持的浏览器，多写一个绝对">
+<meta name="keywords" content="css">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Promise初体验">
-<meta property="og:url" content="http://yoursite.com/2018/06/13/Promise初体验/index.html">
+<meta property="og:title" content="rem适配">
+<meta property="og:url" content="http://yoursite.com/2018/10/09/rem适配/index.html">
 <meta property="og:site_name" content="Mizxinp&#39;s Blog">
-<meta property="og:description" content="写在前面： ​    想了解更多有关回调的，可以去看这篇文章Callback Hell ​    想了解更多有关Promise的使用，推荐去阮一峰老师的ES6教程阮一峰Promise ​    因最近在学nodejs，所以文章结合node进行说明  回调函数解决异步编程先简单了解一下回调函数解决异步操作所引起的回调地狱问题。 我们知道异步编程无法保证代码的顺序性，如 12345678910111">
+<meta property="og:description" content="在说rem之前先说说移动端的适配  移动端适配通常有以下几种方案：  伸缩布局：用flex实现 流式布局：利用百分比实现 响应式布局：利用媒体查询实现 rem适配  前面三种共同点就是只能做到宽度的适配，高度则不行。而rem则实现宽高都能适配（利用等比缩放） rem目前，IE9+，Firefox、Chrome、Safari、Opera 的主流版本都支持了 rem。对于不支持的浏览器，多写一个绝对">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-13T15:18:46.519Z">
+<meta property="og:updated_time" content="2018-10-09T11:33:03.212Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Promise初体验">
-<meta name="twitter:description" content="写在前面： ​    想了解更多有关回调的，可以去看这篇文章Callback Hell ​    想了解更多有关Promise的使用，推荐去阮一峰老师的ES6教程阮一峰Promise ​    因最近在学nodejs，所以文章结合node进行说明  回调函数解决异步编程先简单了解一下回调函数解决异步操作所引起的回调地狱问题。 我们知道异步编程无法保证代码的顺序性，如 12345678910111">
+<meta name="twitter:title" content="rem适配">
+<meta name="twitter:description" content="在说rem之前先说说移动端的适配  移动端适配通常有以下几种方案：  伸缩布局：用flex实现 流式布局：利用百分比实现 响应式布局：利用媒体查询实现 rem适配  前面三种共同点就是只能做到宽度的适配，高度则不行。而rem则实现宽高都能适配（利用等比缩放） rem目前，IE9+，Firefox、Chrome、Safari、Opera 的主流版本都支持了 rem。对于不支持的浏览器，多写一个绝对">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/06/13/Promise初体验/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/09/rem适配/"/>
 
 
 
 
 
-  <title>Promise初体验 | Mizxinp's Blog</title>
+  <title>rem适配 | Mizxinp's Blog</title>
   
 
 
@@ -270,7 +270,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/13/Promise初体验/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/09/rem适配/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张兴平">
@@ -287,7 +287,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Promise初体验</h1>
+          <h1 class="post-title" itemprop="name headline">rem适配</h1>
         
 
         <div class="post-meta">
@@ -299,8 +299,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-13T22:55:20+08:00">
-                2018-06-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-09T18:36:46+08:00">
+                2018-10-09
               </time>
             
 
@@ -322,19 +322,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/js/ES6/" itemprop="url" rel="index">
-                    <span itemprop="name">ES6</span>
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
                   </a>
                 </span>
 
@@ -364,7 +353,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  819字
+                  636字
                 </span>
               
 
@@ -380,7 +369,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4分钟
+                  3分钟
                 </span>
               
             </div>
@@ -402,26 +391,39 @@
 
       
         <blockquote>
-<p>写在前面：</p>
-<p>​    想了解更多有关回调的，可以去看这篇文章<a href="http://callbackhell.com/" target="_blank" rel="noopener">Callback Hell</a></p>
-<p>​    想了解更多有关Promise的使用，推荐去阮一峰老师的ES6教程<a href="http://es6.ruanyifeng.com/#docs/promise" target="_blank" rel="noopener">阮一峰Promise</a></p>
-<p>​    因最近在学nodejs，所以文章结合node进行说明</p>
+<p>在说rem之前先说说移动端的适配</p>
 </blockquote>
-<h2 id="回调函数解决异步编程"><a href="#回调函数解决异步编程" class="headerlink" title="回调函数解决异步编程"></a>回调函数解决异步编程</h2><p>先简单了解一下回调函数解决异步操作所引起的回调地狱问题。</p>
-<p>我们知道异步编程无法保证代码的顺序性，如</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</span><br><span class="line"></span><br><span class="line">fs.readFile(filePath, <span class="string">'utf8'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (err) &#123;</span><br><span class="line">    <span class="keyword">throw</span> err</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(aaa)</span><br><span class="line">&#125;)</span><br><span class="line">fs.readFile(filePath, <span class="string">'utf8'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (err) &#123;</span><br><span class="line">      <span class="keyword">throw</span> err</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(bbb)    </span><br><span class="line">&#125;)</span><br><span class="line">fs.readFile(filePath, <span class="string">'utf8'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (err) &#123;</span><br><span class="line">        <span class="keyword">throw</span> err</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="built_in">console</span>.log(ccc)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>在这里我们不能保证按顺序输出aaa，bbb，ccc。</p>
-<p>我们可以使用传统的回调函数嵌套的方法 来解决这样的问题：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">var fs = require(<span class="string">'fs'</span>)</span><br><span class="line"></span><br><span class="line">fs.readFile(filePath, <span class="string">'utf8'</span>, function (err, data) &#123;</span><br><span class="line">  <span class="keyword">if</span> (err) &#123;</span><br><span class="line">    <span class="keyword">throw</span> err</span><br><span class="line">  &#125;</span><br><span class="line">  console.log(aaa)</span><br><span class="line">  fs.readFile(filePath, <span class="string">'utf8'</span>, function (err, data) &#123;</span><br><span class="line">    <span class="keyword">if</span> (err) &#123;</span><br><span class="line">      <span class="keyword">throw</span> err</span><br><span class="line">    &#125;</span><br><span class="line">    console.log(bbb)</span><br><span class="line">    fs.readFile(filePath, <span class="string">'utf8'</span>, function (err, data) &#123;</span><br><span class="line">      <span class="keyword">if</span> (err) &#123;</span><br><span class="line">        <span class="keyword">throw</span> err</span><br><span class="line">      &#125;</span><br><span class="line">      console.log(ccc)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
-<p>很显然，当嵌套过多时，既会产生人们常说的回调地狱问题。所以就有了Promise</p>
-<h2 id="Promise是什么"><a href="#Promise是什么" class="headerlink" title="Promise是什么"></a>Promise是什么</h2><p>Promise是ES6的语法，是异步编程的一种解决方案，传统的解决异步编程方法是使用回调函数来解决，但如果需要多个回调就会有回调地狱的问题，而用Promise则会更加合理</p>
-<p>简单来说，Promise是一个容器，里面保存着异步操作的结果,它有三种状态：pending（进行中），resolved（已成功），rejected（以失败），一旦状态改变，就不会再变回来，即从pending变为resolved和从pending变为rejected两种可能，当这两种可能已经发生，状态就不会再变了。<code>以下的内容均结合node的异步操作来说明</code></p>
-<h2 id="简单使用"><a href="#简单使用" class="headerlink" title="简单使用"></a>简单使用</h2><p>Promise是一个构造函数，首先要创造一个Promise实例。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> promiseOne = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> (<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">  fs.readFile(filePath, <span class="string">'utf8'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (err) &#123;</span><br><span class="line">        <span class="comment">//容器中的任务失败了，把容器中的pending状态变为rejected</span></span><br><span class="line">             </span><br><span class="line">      reject(err) <span class="comment">//调用reject就相当于调用了then方法的第二个参数函数</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">//容器中的任务成功了， 把容器中的pending状态变为resolved</span></span><br><span class="line">         </span><br><span class="line">      resolve(data) <span class="comment">//也就是说这里调用的resolve方法实际就是then方法传递的那个function</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>Promise实例生成以后，可以用then方法分别指定resolved状态和rejected状态的回调函数</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">promiseOne.then(<span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//成功</span></span><br><span class="line">    <span class="built_in">console</span>.log(data)</span><br><span class="line">&#125;, <span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//失败</span></span><br><span class="line">    <span class="built_in">console</span>.log(err)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>then方法接收两个回调函数，第一个回调函数即调用上文中的resolve（data），第二个回调函数可选，即调用上文中的rejecte（err）</p>
-<h2 id="简单封装Promise版本的readFile方法"><a href="#简单封装Promise版本的readFile方法" class="headerlink" title="简单封装Promise版本的readFile方法"></a>简单封装Promise版本的readFile方法</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">promiseReadFile</span>(<span class="params">filePath</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> (<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">    fs.readFile(filePath, <span class="string">'utf8'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (err) &#123;</span><br><span class="line">        reject(err)</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        resolve(data)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">promiseReadFile(filePath)</span><br><span class="line">  .then(<span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data)</span><br><span class="line">    <span class="keyword">return</span> promiseReadFile(filePath)</span><br><span class="line">  &#125;)</span><br><span class="line">  .then(<span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data)</span><br><span class="line">    <span class="keyword">return</span> promiseReadFile(filePath)</span><br><span class="line">  &#125;)</span><br><span class="line">  .then(<span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data)</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+<p>移动端适配通常有以下几种方案：</p>
+<ul>
+<li>伸缩布局：用flex实现</li>
+<li>流式布局：利用百分比实现</li>
+<li>响应式布局：利用媒体查询实现</li>
+<li>rem适配</li>
+</ul>
+<p>前面三种共同点就是只能做到宽度的适配，高度则不行。而rem则实现宽高都能适配（利用等比缩放）</p>
+<h3 id="rem"><a href="#rem" class="headerlink" title="rem"></a>rem</h3><p>目前，IE9+，Firefox、Chrome、Safari、Opera 的主流版本都支持了 rem。对于不支持的浏览器，多写一个绝对单位的声明。这些浏览器就会忽略用 rem</p>
+<h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><p>通过控制html上的字体大小来控制页面上所有以rem为基准值的尺寸，从而达到适配目的</p>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p>用%在html元素中设置font-size值：</p>
+<p>可以在css中的body中先全局声明 font-size=62.5%，为什么设置62.5%呢？因为因为 100%=16px，1px=6.25%，所以 10px=62.5%。</p>
+<p>然后1rem = 10px，所以12px = 1.2rem。px 与 rem 的转换通过 10 就可以得来，</p>
+<p>我们可以这么用：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span>&#123;</span><br><span class="line">    <span class="attribute">font-size</span>:<span class="number">62.5%</span>;</span><br><span class="line">&#125; </span><br><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">font-size</span>:<span class="number">12px</span>;</span><br><span class="line">    <span class="attribute">font-size</span>:<span class="number">1.2rem</span>;</span><br><span class="line">&#125; </span><br><span class="line"><span class="selector-tag">p</span>&#123;</span><br><span class="line">    <span class="attribute">font-size</span>:<span class="number">14px</span>;</span><br><span class="line">    <span class="attribute">font-size</span>:<span class="number">1.4rem</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后通过媒体查询来完成各个设备的适配。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> only screen and (min-width: <span class="number">320px</span>)&#123;</span><br><span class="line">   <span class="selector-tag">html</span> &#123;</span><br><span class="line">       <span class="attribute">font-size</span>: <span class="number">62.5%</span> <span class="meta">!important</span>;</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br><span class="line">@<span class="keyword">media</span> only screen and (min-width: <span class="number">640px</span>)&#123;</span><br><span class="line">   <span class="selector-tag">html</span> &#123;</span><br><span class="line">       <span class="attribute">font-size</span>: <span class="number">125%</span> <span class="meta">!important</span>;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">media</span> only screen and (min-width: <span class="number">750px</span>)&#123;</span><br><span class="line">    <span class="selector-tag">html</span> &#123;</span><br><span class="line">        <span class="attribute">font-size</span>: <span class="number">150%</span> <span class="meta">!important</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当然我们也可以不在html上设置百分比，直接设置px，设置一个基准值，那么rem的计算方法就是：</p>
+<p><code>rem基准值 = 预设的基准值 / 设计稿宽度 * 当前设备的宽度</code></p>
+<p><strong>rem弊端</strong></p>
+<p>rem不好维护，当设备更新，设计稿尺寸变换等。所以我们可以使用css预编译器 + rem来实现，这样就减少了挨个写媒体查询了</p>
+<h5 id="less-rem-实现适配"><a href="#less-rem-实现适配" class="headerlink" title="less + rem 实现适配"></a>less + rem 实现适配</h5><p>变量：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//var.less</span></span><br><span class="line"><span class="keyword">@charset</span> <span class="string">"utf-8"</span>;</span><br><span class="line"><span class="comment">//适配主流设备</span></span><br><span class="line"><span class="variable">@adapterDeviceList:</span><span class="number">750px</span>,<span class="number">720px</span>,<span class="number">640px</span>,<span class="number">540px</span>,<span class="number">480px</span>,<span class="number">424px</span>,<span class="number">414px</span>,<span class="number">400px</span>,<span class="number">384px</span>,<span class="number">375px</span>,<span class="number">360px</span>,<span class="number">320px</span>;</span><br><span class="line"><span class="comment">//设计稿尺寸</span></span><br><span class="line"><span class="variable">@psdWidth:</span><span class="number">750px</span>;</span><br><span class="line"><span class="comment">//预设基准值</span></span><br><span class="line"><span class="variable">@baseFoontSize:</span><span class="number">100px</span>;</span><br><span class="line"><span class="comment">//设备的种类</span></span><br><span class="line"><span class="variable">@len:</span>length(<span class="variable">@adapterDeviceList</span>);</span><br></pre></td></tr></table></figure>
+<p>函数：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//mixins.less</span></span><br><span class="line"><span class="selector-class">.adapterMixin</span>(<span class="variable">@index</span>)<span class="keyword">when</span>(<span class="variable">@index</span> &gt; <span class="number">0</span>)&#123;</span><br><span class="line">    <span class="keyword">@media</span>(<span class="attribute">min-width</span>:extract(<span class="variable">@adapreDeviceList</span>,<span class="variable">@index</span>))&#123;</span><br><span class="line">        <span class="selector-tag">html</span>()&#123;</span><br><span class="line">            <span class="attribute">font-size</span>:<span class="variable">@baseFontSize</span> / <span class="variable">@psdWidth</span> * extract(<span class="variable">@adapreDeviceList</span>,<span class="variable">@index</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-class">.adapterMin</span>(<span class="variable">@index</span> - <span class="number">1</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>适配：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//adapter.less</span></span><br><span class="line"><span class="selector-class">.adapterMixin</span>(<span class="variable">@len</span>)&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>重置：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//reset.less</span></span><br><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">font-size</span>:<span class="number">14px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>主文件：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//index.less</span></span><br><span class="line"><span class="comment">//变量</span></span><br><span class="line"><span class="keyword">@import</span> <span class="string">"var"</span>;</span><br><span class="line"><span class="comment">//混入</span></span><br><span class="line"><span class="keyword">@import</span> <span class="string">"mixins"</span>;</span><br><span class="line"><span class="comment">//适配</span></span><br><span class="line"><span class="keyword">@import</span> <span class="string">"adapter"</span>;</span><br><span class="line"><span class="comment">//重置样式</span></span><br><span class="line"><span class="keyword">@import</span> <span class="string">"reset"</span>;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -439,7 +441,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/ES6/" rel="tag"># -ES6</a>
+            <a href="/tags/css/" rel="tag"># css</a>
           
         </div>
       
@@ -452,8 +454,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/10/Mongoose简单操作/" rel="next" title="Mongoose简单操作">
-                <i class="fa fa-chevron-left"></i> Mongoose简单操作
+              <a href="/2018/10/09/Less简单使用/" rel="next" title="Less简单使用">
+                <i class="fa fa-chevron-left"></i> Less简单使用
               </a>
             
           </div>
@@ -462,8 +464,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/08/08/一、认识jQuery/" rel="prev" title="一、认识jQuery">
-                一、认识jQuery <i class="fa fa-chevron-right"></i>
+              <a href="/2018/10/10/圣杯布局/" rel="prev" title="圣杯布局和双飞翼布局">
+                圣杯布局和双飞翼布局 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -596,7 +598,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#回调函数解决异步编程"><span class="nav-number">1.</span> <span class="nav-text">回调函数解决异步编程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise是什么"><span class="nav-number">2.</span> <span class="nav-text">Promise是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简单使用"><span class="nav-number">3.</span> <span class="nav-text">简单使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简单封装Promise版本的readFile方法"><span class="nav-number">4.</span> <span class="nav-text">简单封装Promise版本的readFile方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#rem"><span class="nav-number">1.</span> <span class="nav-text">rem</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原理"><span class="nav-number">1.1.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用"><span class="nav-number">1.2.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#less-rem-实现适配"><span class="nav-number">1.2.1.</span> <span class="nav-text">less + rem 实现适配</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
