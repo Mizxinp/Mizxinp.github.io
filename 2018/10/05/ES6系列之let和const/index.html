@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="var存在的问题可以重复声明  无法限制修改没有块级作用域">
+<meta name="description" content="var存在的问题1.可以重复声明 2.无法限制修改 3.没有块级作用域 1234if(true)&amp;#123;    var a = 1;&amp;#125;console.log(a) 因为存在变量提升，所以相当于12345var a;if(true)&amp;#123;     a = 1;&amp;#125;console.log(a) 如果条件为false，结果会是undefined let1.不允许在相同作用域内">
 <meta name="keywords" content="ES6">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ES6系列之let和const">
 <meta property="og:url" content="http://yoursite.com/2018/10/05/ES6系列之let和const/index.html">
 <meta property="og:site_name" content="Mizxinp&#39;s Blog">
-<meta property="og:description" content="var存在的问题可以重复声明  无法限制修改没有块级作用域">
+<meta property="og:description" content="var存在的问题1.可以重复声明 2.无法限制修改 3.没有块级作用域 1234if(true)&amp;#123;    var a = 1;&amp;#125;console.log(a) 因为存在变量提升，所以相当于12345var a;if(true)&amp;#123;     a = 1;&amp;#125;console.log(a) 如果条件为false，结果会是undefined let1.不允许在相同作用域内">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-05T13:39:21.851Z">
+<meta property="og:updated_time" content="2018-10-11T10:55:25.598Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES6系列之let和const">
-<meta name="twitter:description" content="var存在的问题可以重复声明  无法限制修改没有块级作用域">
+<meta name="twitter:description" content="var存在的问题1.可以重复声明 2.无法限制修改 3.没有块级作用域 1234if(true)&amp;#123;    var a = 1;&amp;#125;console.log(a) 因为存在变量提升，所以相当于12345var a;if(true)&amp;#123;     a = 1;&amp;#125;console.log(a) 如果条件为false，结果会是undefined let1.不允许在相同作用域内">
 
 
 
@@ -364,7 +364,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  25字
+                  390字
                 </span>
               
 
@@ -380,7 +380,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1分钟
+                  2分钟
                 </span>
               
             </div>
@@ -401,9 +401,32 @@
       
 
       
-        <h3 id="var存在的问题"><a href="#var存在的问题" class="headerlink" title="var存在的问题"></a>var存在的问题</h3><h5 id="可以重复声明"><a href="#可以重复声明" class="headerlink" title="可以重复声明"></a>可以重复声明</h5><pre><code class="javascript">
-</code></pre>
-<h5 id="无法限制修改"><a href="#无法限制修改" class="headerlink" title="无法限制修改"></a>无法限制修改</h5><h5 id="没有块级作用域"><a href="#没有块级作用域" class="headerlink" title="没有块级作用域"></a>没有块级作用域</h5>
+        <h2 id="var存在的问题"><a href="#var存在的问题" class="headerlink" title="var存在的问题"></a>var存在的问题</h2><p>1.可以重复声明</p>
+<p>2.无法限制修改</p>
+<p>3.没有块级作用域</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(a)</span><br></pre></td></tr></table></figure>
+<p>因为存在变量提升，所以相当于<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a;</span><br><span class="line"><span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">     a = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(a)</span><br></pre></td></tr></table></figure></p>
+<p>如果条件为false，结果会是undefined</p>
+<h2 id="let"><a href="#let" class="headerlink" title="let"></a>let</h2><p>1.不允许在相同作用域内，重复声明同一个变量</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">let</span> a = <span class="number">2</span>;  <span class="comment">//报错</span></span><br></pre></td></tr></table></figure>
+<p>2.变量，可以重复修改</p>
+<p>3.拥有块级作用域</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="keyword">let</span> a = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">var</span> b = <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(a);  <span class="comment">//报错</span></span><br><span class="line"><span class="built_in">console</span>.log(b);  <span class="comment">//2</span></span><br></pre></td></tr></table></figure>
+<p>可以解决for循环中的一些问题</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i&lt;<span class="number">5</span>; i++)&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span> <span class="title">timer</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i)  <span class="comment">//每次都打印5</span></span><br><span class="line">    &#125;,i*<span class="number">1000</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//我们可以用闭包解决，也可以用let解决</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i&lt;<span class="number">5</span>; i++)&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span> <span class="title">timer</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i)  <span class="comment">//一次打印0，1，2，3，4</span></span><br><span class="line">    &#125;,i*<span class="number">1000</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>4.不存在变量提升</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">//报错</span></span><br><span class="line"><span class="keyword">let</span> a = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<p>5.不会绑定全局作用域</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//先看var</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">window</span>.a); <span class="comment">//1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//let和const不会</span></span><br><span class="line"><span class="keyword">let</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">window</span>.a); <span class="comment">//undefinded</span></span><br></pre></td></tr></table></figure>
+<h3 id="暂时性死区"><a href="#暂时性死区" class="headerlink" title="暂时性死区"></a>暂时性死区</h3><p>在代码块内，只要在未使用let声明变量前使用该变量都会报错，称为”暂时性死区”</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    a  = <span class="number">1</span>; <span class="comment">//报错</span></span><br><span class="line">    <span class="keyword">let</span> a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>另外还有一点也和var不同<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = a;  <span class="comment">//不报错</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> a = a;  <span class="comment">//报错</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="const"><a href="#const" class="headerlink" title="const"></a>const</h2><ul>
+<li>不能重复声明</li>
+<li>常量，不可以重复修改</li>
+<li>拥有块级作用域</li>
+</ul>
+
       
     </div>
     
@@ -522,7 +545,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">32</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -544,7 +567,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -577,7 +600,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#var存在的问题"><span class="nav-number">1.</span> <span class="nav-text">var存在的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#可以重复声明"><span class="nav-number">1.0.1.</span> <span class="nav-text">可以重复声明</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#无法限制修改"><span class="nav-number">1.0.2.</span> <span class="nav-text">无法限制修改</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#没有块级作用域"><span class="nav-number">1.0.3.</span> <span class="nav-text">没有块级作用域</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#var存在的问题"><span class="nav-number">1.</span> <span class="nav-text">var存在的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#let"><span class="nav-number">2.</span> <span class="nav-text">let</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#暂时性死区"><span class="nav-number">2.1.</span> <span class="nav-text">暂时性死区</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#const"><span class="nav-number">3.</span> <span class="nav-text">const</span></a></li></ol></div>
             
 
           </div>
