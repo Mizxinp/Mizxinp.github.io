@@ -79,20 +79,18 @@
 
 
 
-<meta name="description" content="prototype每个函数都有一个prototype属性，指向实例的原型。是构造函数和实例原型之间的桥梁。 _proto_除了null外，每一个JavaScript对象都有一proto个属性，指向该对象的原型。proto属性连接着实例与实例原型 constructor每个原型都有一个constructor属性，指向关联的构造函数 原型的原型原型对象是通过Object构造函数生成的。即Object.">
+<meta name="description" content="此文章并不是围绕一个主题来展开的，只是日常的零散时间，碰到一些知识，在此做个记录。  作用域问题在看到一个有意思的例子： 1234567var a = 123;function f()&amp;#123;    console.log(a);     //undefined    var a = 1;    console.log(a);     //1&amp;#125;f(); 刚看到时以为不就是打印123">
 <meta name="keywords" content="js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="简单总结JavaScript原型与原型链">
-<meta property="og:url" content="http://yoursite.com/2018/09/10/简单总结JavaScript原型和原型链/index.html">
+<meta property="og:title" content="零散阅读">
+<meta property="og:url" content="http://yoursite.com/2018/09/18/离散阅读/index.html">
 <meta property="og:site_name" content="Mizxinp&#39;s Blog">
-<meta property="og:description" content="prototype每个函数都有一个prototype属性，指向实例的原型。是构造函数和实例原型之间的桥梁。 _proto_除了null外，每一个JavaScript对象都有一proto个属性，指向该对象的原型。proto属性连接着实例与实例原型 constructor每个原型都有一个constructor属性，指向关联的构造函数 原型的原型原型对象是通过Object构造函数生成的。即Object.">
+<meta property="og:description" content="此文章并不是围绕一个主题来展开的，只是日常的零散时间，碰到一些知识，在此做个记录。  作用域问题在看到一个有意思的例子： 1234567var a = 123;function f()&amp;#123;    console.log(a);     //undefined    var a = 1;    console.log(a);     //1&amp;#125;f(); 刚看到时以为不就是打印123">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://pe3wjto58.bkt.clouddn.com/image/js%E5%8E%9F%E5%9E%8B.png">
-<meta property="og:updated_time" content="2018-09-10T11:53:25.088Z">
+<meta property="og:updated_time" content="2018-09-18T11:29:44.562Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="简单总结JavaScript原型与原型链">
-<meta name="twitter:description" content="prototype每个函数都有一个prototype属性，指向实例的原型。是构造函数和实例原型之间的桥梁。 _proto_除了null外，每一个JavaScript对象都有一proto个属性，指向该对象的原型。proto属性连接着实例与实例原型 constructor每个原型都有一个constructor属性，指向关联的构造函数 原型的原型原型对象是通过Object构造函数生成的。即Object.">
-<meta name="twitter:image" content="http://pe3wjto58.bkt.clouddn.com/image/js%E5%8E%9F%E5%9E%8B.png">
+<meta name="twitter:title" content="零散阅读">
+<meta name="twitter:description" content="此文章并不是围绕一个主题来展开的，只是日常的零散时间，碰到一些知识，在此做个记录。  作用域问题在看到一个有意思的例子： 1234567var a = 123;function f()&amp;#123;    console.log(a);     //undefined    var a = 1;    console.log(a);     //1&amp;#125;f(); 刚看到时以为不就是打印123">
 
 
 
@@ -122,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/10/简单总结JavaScript原型和原型链/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/18/离散阅读/"/>
 
 
 
 
 
-  <title>简单总结JavaScript原型与原型链 | Mizxinp's Blog</title>
+  <title>零散阅读 | Mizxinp's Blog</title>
   
 
 
@@ -272,7 +270,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/10/简单总结JavaScript原型和原型链/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/18/离散阅读/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张兴平">
@@ -289,7 +287,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">简单总结JavaScript原型与原型链</h1>
+          <h1 class="post-title" itemprop="name headline">零散阅读</h1>
         
 
         <div class="post-meta">
@@ -301,8 +299,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-10T18:55:07+08:00">
-                2018-09-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-18T19:05:28+08:00">
+                2018-09-18
               </time>
             
 
@@ -355,7 +353,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  136字
+                  228字
                 </span>
               
 
@@ -392,11 +390,13 @@
       
 
       
-        <h4 id="prototype"><a href="#prototype" class="headerlink" title="prototype"></a>prototype</h4><p>每个函数都有一个prototype属性，指向实例的原型。是构造函数和实例原型之间的桥梁。</p>
-<h4 id="proto"><a href="#proto" class="headerlink" title="_proto_"></a>_proto_</h4><p>除了null外，每一个JavaScript对象都有一<em>proto</em>个属性，指向该对象的原型。<em>proto</em>属性连接着实例与实例原型</p>
-<h4 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h4><p>每个原型都有一个constructor属性，指向关联的构造函数</p>
-<h4 id="原型的原型"><a href="#原型的原型" class="headerlink" title="原型的原型"></a>原型的原型</h4><p>原型对象是通过Object构造函数生成的。即Object.prototype。而Object.prototype的原型为null</p>
-<p>用一张图表示他们之间的关系<br><img src="http://pe3wjto58.bkt.clouddn.com/image/js%E5%8E%9F%E5%9E%8B.png" alt="原型链"></p>
+        <blockquote>
+<p>此文章并不是围绕一个主题来展开的，只是日常的零散时间，碰到一些知识，在此做个记录。</p>
+</blockquote>
+<h4 id="作用域问题"><a href="#作用域问题" class="headerlink" title="作用域问题"></a>作用域问题</h4><p>在看到一个有意思的例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">123</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a);     <span class="comment">//undefined</span></span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(a);     <span class="comment">//1</span></span><br><span class="line">&#125;</span><br><span class="line">f();</span><br></pre></td></tr></table></figure>
+<p>刚看到时以为不就是打印123和1吗，但结果确实第一次打印undefined，第二次是1，为什么呢。这跟作用域有关，第一次显示undefined，是因为函数域始终优先于全局域，所以局部变量a会覆盖所有与它同名的全局变量。这就知道为什么第一次调用console.log()会打印undefined了，因为a还没有被正式定义。</p>
+<h4 id="函数的return子句"><a href="#函数的return子句" class="headerlink" title="函数的return子句"></a>函数的return子句</h4><p>函数通常都有返回值，如果某个函数没有显式的返回值，则默认它的返回值为undefined</p>
 
       
     </div>
@@ -427,8 +427,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/09/移动端分辨率问题/" rel="next" title="移动端分辨率问题">
-                <i class="fa fa-chevron-left"></i> 移动端分辨率问题
+              <a href="/2018/09/10/简单总结JavaScript原型和原型链/" rel="next" title="简单总结JavaScript原型与原型链">
+                <i class="fa fa-chevron-left"></i> 简单总结JavaScript原型与原型链
               </a>
             
           </div>
@@ -437,8 +437,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/18/离散阅读/" rel="prev" title="零散阅读">
-                零散阅读 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/09/18/git简单使用/" rel="prev" title="git简单使用">
+                git简单使用 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -571,7 +571,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#prototype"><span class="nav-number">1.</span> <span class="nav-text">prototype</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#proto"><span class="nav-number">2.</span> <span class="nav-text">_proto_</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#constructor-NaN"><span class="nav-number">3.</span> <span class="nav-text">constructor</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#原型的原型"><span class="nav-number">4.</span> <span class="nav-text">原型的原型</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#作用域问题"><span class="nav-number">1.</span> <span class="nav-text">作用域问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数的return子句"><span class="nav-number">2.</span> <span class="nav-text">函数的return子句</span></a></li></ol></div>
             
 
           </div>
