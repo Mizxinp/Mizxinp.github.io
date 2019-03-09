@@ -67,6 +67,18 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[ES6系列之箭头函数]]></title>
+    <url>%2F2018%2F10%2F08%2FES6%E7%B3%BB%E5%88%97%E4%B9%8B%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0%2F</url>
+    <content type="text"><![CDATA[基本语法1.如果只有一个参数，()可以省略 1234567let fn = function()&#123; console.log('abc');&#125;//等价于let fn = () =&gt; &#123; console.log('abc');&#125; 2.如果只有一个return，{}可以省略 12345let fn = function(a)&#123; return a * 2;&#125;//等价于let fn = a =&gt; a * 2 3.加括号的函数体返回对象字面表达式。在实际中可以给数组中的对象添加键值 12345678910111213//形式let fn = a =&gt; (&#123;foo:bar&#125;)//应用：给数组中的对象添加键值let data = [ &#123;a:1&#125;, &#123;b:2,a:3&#125;];let obj = data.map(item =&gt; (&#123; ...item, add:item.a&#125;))console.log(obj) 与普通函数区别 没有this：箭头函数没有this，需要通过作用域链来确定this的值。如果箭头函数被普通函数包含，this绑定的就是最近一层非箭头函数的this。由于箭头函数没有自己的this，所以通过call()或apply()方法调用一个函数时，只能传递参数，不能绑定this。他们的第一个参数会被忽略。 没有arguments：箭头函数没有arguments对象，但可以访问外围函数的arguments对象 不能通过new关键字调用 没有原型]]></content>
+      <categories>
+        <category>js</category>
+        <category>ES6</category>
+      </categories>
+      <tags>
+        <tag>ES6</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[ES6系列之let和const]]></title>
     <url>%2F2018%2F10%2F05%2FES6%E7%B3%BB%E5%88%97%E4%B9%8Blet%E5%92%8Cconst%2F</url>
     <content type="text"><![CDATA[var存在的问题1.可以重复声明 2.无法限制修改 3.没有块级作用域 1234if(true)&#123; var a = 1;&#125;console.log(a) 因为存在变量提升，所以相当于12345var a;if(true)&#123; a = 1;&#125;console.log(a) 如果条件为false，结果会是undefined let1.不允许在相同作用域内，重复声明同一个变量 12let a = 1;let a = 2; //报错 2.变量，可以重复修改 3.拥有块级作用域 123456&#123; let a = 1; var b = 2;&#125;console.log(a); //报错console.log(b); //2 可以解决for循环中的一些问题 12345678910111213for(var i = 0; i&lt;5; i++)&#123; setTimeout(function timer()&#123; console.log(i) //每次都打印5 &#125;,i*1000)&#125;//我们可以用闭包解决，也可以用let解决for(let i = 0; i&lt;5; i++)&#123; setTimeout(function timer()&#123; console.log(i) //一次打印0，1，2，3，4 &#125;,i*1000)&#125; 4.不存在变量提升 12console.log(a); //报错let a = 1; 5.不会绑定全局作用域 1234567//先看varvar a = 1;console.log(window.a); //1//let和const不会let a = 1;console.log(window.a); //undefinded 暂时性死区在代码块内，只要在未使用let声明变量前使用该变量都会报错，称为”暂时性死区” 1234if(true)&#123; a = 1; //报错 let a;&#125; 另外还有一点也和var不同123var a = a; //不报错let a = a; //报错 const 不能重复声明 常量，不可以重复修改 拥有块级作用域]]></content>
