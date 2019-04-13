@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Mizxinp&#39;s Blog">
 <meta property="og:description" content="基本语法1.如果只有一个参数，()可以省略 1234567let fn = function()&amp;#123;    console.log(&apos;abc&apos;);&amp;#125;//等价于let fn = () =&amp;gt; &amp;#123;    console.log(&apos;abc&apos;);&amp;#125; 2.如果只有一个return，{}可以省略 12345let fn = function(a)&amp;#123;    r">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-09T14:27:08.150Z">
+<meta property="og:updated_time" content="2019-04-13T09:14:50.543Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES6系列之箭头函数">
 <meta name="twitter:description" content="基本语法1.如果只有一个参数，()可以省略 1234567let fn = function()&amp;#123;    console.log(&apos;abc&apos;);&amp;#125;//等价于let fn = () =&amp;gt; &amp;#123;    console.log(&apos;abc&apos;);&amp;#125; 2.如果只有一个return，{}可以省略 12345let fn = function(a)&amp;#123;    r">
@@ -364,7 +364,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  307字
+                  385字
                 </span>
               
 
@@ -380,7 +380,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1分钟
+                  2分钟
                 </span>
               
             </div>
@@ -409,9 +409,11 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//形式</span></span><br><span class="line"><span class="keyword">let</span> fn = <span class="function"><span class="params">a</span> =&gt;</span> (&#123;<span class="attr">foo</span>:bar&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//应用：给数组中的对象添加键值</span></span><br><span class="line"><span class="keyword">let</span> data = [</span><br><span class="line">    &#123;<span class="attr">a</span>:<span class="number">1</span>&#125;,</span><br><span class="line">    &#123;<span class="attr">b</span>:<span class="number">2</span>,<span class="attr">a</span>:<span class="number">3</span>&#125;</span><br><span class="line">];</span><br><span class="line"><span class="keyword">let</span> obj = data.map(<span class="function"><span class="params">item</span> =&gt;</span> (&#123;</span><br><span class="line">    ...item,</span><br><span class="line">    add:item.a</span><br><span class="line">&#125;))</span><br><span class="line"><span class="built_in">console</span>.log(obj)</span><br></pre></td></tr></table></figure>
 <h2 id="与普通函数区别"><a href="#与普通函数区别" class="headerlink" title="与普通函数区别"></a>与普通函数区别</h2><ul>
 <li>没有this：箭头函数没有this，需要通过作用域链来确定this的值。如果箭头函数被普通函数包含，this绑定的就是最近一层非箭头函数的this。由于箭头函数没有自己的this，所以通过call()或apply()方法调用一个函数时，只能传递参数，不能绑定this。他们的第一个参数会被忽略。</li>
-<li>没有arguments：箭头函数没有arguments对象，但可以访问外围函数的arguments对象</li>
-<li>不能通过new关键字调用</li>
-<li>没有原型</li>
+<li>没有arguments：箭头函数没有arguments对象，但可以访问外围函数的arguments对象，可以用rest参数(剩余参数)解决</li>
+<li>箭头函数是匿名函数，不能作为构造函数，不能通过new关键字调用</li>
+<li>没有原型属性</li>
+<li>不能当做Generator函数，不能使用yield关键字</li>
+<li>箭头函数通过call()和apply()方法调用一个函数时，只传入一个参数，对this并没有影响</li>
 </ul>
 
       
@@ -532,7 +534,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
