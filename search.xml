@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title><![CDATA[Ant Design Mobile中Grid 组件问题]]></title>
-    <url>%2F2019%2F04%2F18%2Fcuowo%2F</url>
+    <url>%2F2019%2F04%2F18%2F%E9%94%99%E8%AF%AF-antdesign%20mobile%E4%B8%AD%E7%9A%84Grid%20%E7%BB%84%E4%BB%B6%2F</url>
     <content type="text"><![CDATA[今天在使用ant design mobile的Grid组件遇到了两个问题 1.组件存在的bug 当设置了grid属性是四行九列，但一开始只出现一行，当滑动后才显示正常。 123456&lt;Grid data=&#123;data&#125; columnNum = &#123;9&#125; carouselMaxRow = &#123;4&#125; isCarousel = &#123;true&#125;/&gt; 官方给出的解决方案是派发一个事件： 1window.dispatchEvent(new Event('resize')) 这样就可以解决这个问题了 2. 滑动时报错，功能能够正常运行，chrome下报错 大概意思是：不能给passive(被动的)事件监听器preventDefault，因为它被认为是passive。 火狐下给出警告忽略一个注册为 ‘passive’ 的监听器的事件类型为 ‘touchmove’ 的 ‘preventDefault()’ 调用 这里有一篇类似的问题：关于passive event listener的一次踩坑 最后在 Chrome Dev Tools - Mobile 这篇文章中得到解决。 原文是这样描述的： Sorry for the trouble, this is a breaking change in Chrome 56 to improve scroll performance. You probably need to add an appropriate touch-action CSS rule to explicitly disable touch scrolling 主要是使用了css属性touch-action,将其设为none即可解决问题。具体可以参考MDN有关touch-action的介绍]]></content>
       <categories>
         <category>错误收集</category>
@@ -24,7 +24,7 @@
   </entry>
   <entry>
     <title><![CDATA[create-react-app中使用装饰器]]></title>
-    <url>%2F2019%2F03%2F13%2Fcreate-react-app%E4%B8%AD%E4%BD%BF%E7%94%A8%E8%A3%85%E9%A5%B0%E5%99%A8%2F</url>
+    <url>%2F2019%2F03%2F13%2F%E9%94%99%E8%AF%AF-create-react-app%E4%B8%AD%E4%BD%BF%E7%94%A8%E8%A3%85%E9%A5%B0%E5%99%A8%2F</url>
     <content type="text"><![CDATA[在使用create-react-app中想使用react-redux中的connect，需要安装插件并配置package.json中的文件。首先1npm run eject 然后：1npm install babel-plugin-transform-decorators-legacy --save-dev 最后在package.json中的文件配置babel1"plugins": ["transform-decorators-legacy"] 上网说这种方法可以就可以实现，不知道为什么我配了之后会出现 最后是通过这种方式解决的： 再安装： 1npm install "@babel/plugin-proposal-decorators" --save-dev 然后配置package.json文件配置babel 1234"plugins": [ ["@babel/plugin-proposal-decorators", &#123; "legacy": true &#125;], ["@babel/plugin-proposal-class-properties", &#123; "loose" : true &#125;]] 最后解决了。]]></content>
       <categories>
         <category>错误收集</category>
@@ -53,6 +53,18 @@
       </categories>
       <tags>
         <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ES6系列之字符串等扩展]]></title>
+    <url>%2F2018%2F10%2F12%2FES6%E7%B3%BB%E5%88%97%E4%B9%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%AD%89%E6%89%A9%E5%B1%95%2F</url>
+    <content type="text"><![CDATA[字符串扩展1.字符的表示 2.遍历：for(let i of list) 方法的扩展 1.includes()：返回布尔值，表示是否找到了参数字符串 2.startsWith()：返回布尔值，表示参数字符串是否在原字符串的头部。 3.endsWith()：返回布尔值，表示参数字符串是否在原字符串的尾部。 第二个参数表示搜索的位置，endsWith()针对前n个； repeat()：返回一个新字符串，表示将原字符串重复n次 ：’x’.repeat(3) ==&gt;’xxx’ 会向下取整 padStart(),padEnd()：补全长度，padStart()用于头部补全，padEnd()用于尾部补全 ：’x’.padStart(5, ‘ab’) // ‘ababx’ String.raw方法，往往用来充当模板字符串的处理函数，返回一个斜杠都被转义（即斜杠前面再加一个斜杠）的字符串，对应于替换变量后的模板字符串 可以使用模板字符串使用反引号（`）标识 空格和缩进都会被保留在输出中 模板字符串中嵌入变量，需要将变量名写在${}之中 ，大括号内部可以放入任意的 JavaScript 表达式，可以进行运算，以及引用对象属性 ，还可以调用函数。 如果大括号中的值不是字符串，将按照一般的规则转为字符串 模板字符串甚至还能嵌套 1234567891011121314//以前$('#result').append( 'There are &lt;b&gt;' + basket.count + '&lt;/b&gt; ' + 'items in your basket, ' + '&lt;em&gt;' + basket.onSale + '&lt;/em&gt; are on sale!');//ES6$('#result').append(` There are &lt;b&gt;$&#123;basket.count&#125;&lt;/b&gt; items in your basket, &lt;em&gt;$&#123;basket.onSale&#125;&lt;/em&gt; are on sale!`);]]></content>
+      <categories>
+        <category>js</category>
+        <category>ES6</category>
+      </categories>
+      <tags>
+        <tag>ES6</tag>
       </tags>
   </entry>
   <entry>
