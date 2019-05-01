@@ -56,6 +56,18 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[ES6系列之函数扩展]]></title>
+    <url>%2F2018%2F10%2F15%2FES6%E7%B3%BB%E5%88%97%E4%B9%8B%E5%87%BD%E6%95%B0%E6%89%A9%E5%B1%95%2F</url>
+    <content type="text"><![CDATA[默认值1.允许为函数的参数设置默认值，设置默认值后，函数体内不能再次用let或const声明 2.不能有同名参数 length属性指定了默认值以后，函数的length属性，将返回没有指定默认值的参数个数。也就是说，指定了默认值后，length属性将失真 如果设置了默认值的参数不是尾参数，那么length属性也不再计入后面的参数了。 12(function (a = 0, b, c) &#123;&#125;).length // 0(function (a, b = 1, c) &#123;&#125;).length // 1 作用域一旦设置了参数的默认值，函数进行声明初始化时，参数会形成一个单独的作用域（context）。等到初始化结束，这个作用域就会消失。这种语法行为，在不设置参数默认值时，是不会出现的。 12345678910111213var x = 1;function f(x, y = x) &#123; console.log(y);&#125;f(2) // 2let x = 1;function f(y = x) &#123; let x = 2; console.log(y);&#125;f() // 1 若全局变量x不存在，就会报错 如果参数的默认值是一个函数，该函数的作用域也遵守这个规则 rest参数（…变量名），用于获取函数的多余参数 12345678function add(...values) &#123; let sum = 0; for (var val of values) &#123; sum += val; &#125; return sum;&#125;add(2, 5, 3) // 10 rest参数之后不能再有其他参数，否则报错 函数的length属性不包括rest参数 name属性12function foo() &#123;&#125;foo.name // "foo" 12345var f = function () &#123;&#125;;// ES5f.name // ""// ES6f.name // "f"]]></content>
+      <categories>
+        <category>js</category>
+        <category>ES6</category>
+      </categories>
+      <tags>
+        <tag>ES6</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[ES6系列之字符串等扩展]]></title>
     <url>%2F2018%2F10%2F12%2FES6%E7%B3%BB%E5%88%97%E4%B9%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%AD%89%E6%89%A9%E5%B1%95%2F</url>
     <content type="text"><![CDATA[字符串扩展1.字符的表示 2.遍历：for(let i of list) 方法的扩展 1.includes()：返回布尔值，表示是否找到了参数字符串 2.startsWith()：返回布尔值，表示参数字符串是否在原字符串的头部。 3.endsWith()：返回布尔值，表示参数字符串是否在原字符串的尾部。 第二个参数表示搜索的位置，endsWith()针对前n个； repeat()：返回一个新字符串，表示将原字符串重复n次 ：’x’.repeat(3) ==&gt;’xxx’ 会向下取整 padStart(),padEnd()：补全长度，padStart()用于头部补全，padEnd()用于尾部补全 ：’x’.padStart(5, ‘ab’) // ‘ababx’ String.raw方法，往往用来充当模板字符串的处理函数，返回一个斜杠都被转义（即斜杠前面再加一个斜杠）的字符串，对应于替换变量后的模板字符串 可以使用模板字符串使用反引号（`）标识 空格和缩进都会被保留在输出中 模板字符串中嵌入变量，需要将变量名写在${}之中 ，大括号内部可以放入任意的 JavaScript 表达式，可以进行运算，以及引用对象属性 ，还可以调用函数。 如果大括号中的值不是字符串，将按照一般的规则转为字符串 模板字符串甚至还能嵌套 1234567891011121314//以前$('#result').append( 'There are &lt;b&gt;' + basket.count + '&lt;/b&gt; ' + 'items in your basket, ' + '&lt;em&gt;' + basket.onSale + '&lt;/em&gt; are on sale!');//ES6$('#result').append(` There are &lt;b&gt;$&#123;basket.count&#125;&lt;/b&gt; items in your basket, &lt;em&gt;$&#123;basket.onSale&#125;&lt;/em&gt; are on sale!`);]]></content>
