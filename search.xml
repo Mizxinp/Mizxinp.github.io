@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[搬瓦工搭建 ShadowSocks 翻墙]]></title>
+    <url>%2F2019%2F07%2F09%2F%E6%90%AC%E7%93%A6%E5%B7%A5%E6%90%AD%E5%BB%BA%20ShadowSocks%20%E7%BF%BB%E5%A2%99%2F</url>
+    <content type="text"><![CDATA[因为某些原因（你懂得）网上教程总是删除，为了方便自己做了一个记录。原文查看使用搬瓦工搭建 ShadowSocks 翻墙（VPN） 购买主机vps和远程连接这里就不说了,连接可以使用putty等工具。 ##### 第一步：使用putty等工具连接远程后等到出现 root@host ~ 字样，执行命令 1wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh 注意 (warning) : 国外服务器运行脚本时容易出错，如出现错误提示 bash: wget: command not found，可以请在先执行 yum -y install wget 命令。成功后，再执行上面的命令。如果没有出现提示错误，请略过。 第二步：等待上一步的命令执行结束后，继续执行命令1chmod +x shadowsocks-all.sh 第三步：等待上一步的命令执行结束后，继续执行命令1./shadowsocks-all.sh 2&gt;&amp;1 | tee shadowsocks-all.log 第四步：根据需要选择，不懂的话直接选1，或者默认回车。下面会提示你输入你的 SS SERVER 的密码和端口。不输入就是默认。跑完命令后会出来你的 SS 客户端的信息。123456789101112131415161718Which Shadowsocks server you’d select:1) Shadowsocks-Python2) ShadowsocksR3) Shadowsocks-Go4) Shadowsocks-libevPlease enter a number (Default Shadowsocks-Python):1You choose = Shadowsocks-PythonPlease enter password for Shadowsocks-Python(Default password: teddysun.com):123456password = 123456Please enter a port for Shadowsocks-Python [1-65535](Default port: 11260):11260port = 11260 第五步：我们选择 aes-256-cfb，即7，回车。第六步：当我们看到 Congratulations, Shadowsocks-Python server install completed! 时，则证明我们已经成功安装了 SS。请立即将这些信息复制下来加以保存，我们就会用到这几个比较重要的信息：主机服务器IP地址、端口号、密码和加密方式。上面的命令全部回车执行后，如果没有报错，即为执行成功，出现确认提示的时候，输入 y 后，回车即可。这样的话我们就在搬瓦工 VPS 主机上完成了 SS 的手动安装，记录保存好你的上述信息：Server IP、Server Port、Password、Encryption Method，我们就可以在不同的设备终端找到相应的 SS 进行安装设置使用了。 1234567891011121314151617INFO: loading config from /etc/shadowsocks-python/config.json2019-03-28 05:14:24 INFO loading libcrypto from libcrypto.so.10Starting Shadowsocks successCongratulations, Shadowsocks-Python server install completed!Your Server IP : 111.11.111.111Your Server Port : 11260Your Password : 123456Your Encryption Method: aes-256-cfbYour QR Code: (For Shadowsocks Windows, OSX, Android and iOS clients)ss://xxxxxxxxxxxxxxxxxYour QR Code has been saved as a PNG file path:/root/shadowsocks_python_qr.pngWelcome to visit: https://teddysun.com/486.htmlEnjoy it! 当出现这些字样代表已经成功。接下来下载ShadowSocks 进行连接就可以愉快的玩耍了。]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Ant Design Mobile中Grid 组件问题]]></title>
     <url>%2F2019%2F04%2F18%2F%E9%94%99%E8%AF%AF-antdesign%20mobile%E4%B8%AD%E7%9A%84Grid%20%E7%BB%84%E4%BB%B6%2F</url>
     <content type="text"><![CDATA[今天在使用ant design mobile的Grid组件遇到了两个问题 1.组件存在的bug 当设置了grid属性是四行九列，但一开始只出现一行，当滑动后才显示正常。 123456&lt;Grid data=&#123;data&#125; columnNum = &#123;9&#125; carouselMaxRow = &#123;4&#125; isCarousel = &#123;true&#125;/&gt; 官方给出的解决方案是派发一个事件： 1window.dispatchEvent(new Event('resize')) 这样就可以解决这个问题了 2. 滑动时报错，功能能够正常运行，chrome下报错 大概意思是：不能给passive(被动的)事件监听器preventDefault，因为它被认为是passive。 火狐下给出警告忽略一个注册为 ‘passive’ 的监听器的事件类型为 ‘touchmove’ 的 ‘preventDefault()’ 调用 这里有一篇类似的问题：关于passive event listener的一次踩坑 最后在 Chrome Dev Tools - Mobile 这篇文章中得到解决。 原文是这样描述的： Sorry for the trouble, this is a breaking change in Chrome 56 to improve scroll performance. You probably need to add an appropriate touch-action CSS rule to explicitly disable touch scrolling 主要是使用了css属性touch-action,将其设为none即可解决问题。具体可以参考MDN有关touch-action的介绍]]></content>
